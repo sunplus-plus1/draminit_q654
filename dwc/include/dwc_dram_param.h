@@ -1,6 +1,5 @@
 #include <auto_config.h>
 
-#ifdef PLATFORM_SP7350
 #if defined(CONFIG_LPDDR4)
 #define DRAM_TYPE_LPDDR4
 #define SDRAM_SPEED_1600	//PLL 800MHz
@@ -25,13 +24,6 @@
 //#define SDRAM_SPEED_533		//PLL 266.6MHz
 //#define SDRAM_SPEED_400		//PLL 200MHz
 
-#elif defined(PLATFORM_Q645)
-#define DRAM_TYPE_LPDDR4
-#define SDRAM_SPEED_1600	//PLL 800MHz
-//#define SDRAM_SPEED_1200	//PLL 600MHz
-//#define SDRAM_SPEED_800	//PLL 400MHz
-//#define SDRAM_SPEED_666	//PLL 333MHz
-#endif
 //#define STREAM_MESSAGE
 //#define CHANGE_CLOCK
 #if defined(CONFIG_NT6AN1024F32AV)
