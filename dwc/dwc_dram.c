@@ -1068,7 +1068,6 @@ void dwc_ddrphy_phyinit_main(void)
 {
 	prn_string("dwc_ddrphy_phyinit_main 20230714\n");
 	mp = 1;
-	#ifdef PLATFORM_SP7350
 	//runtimeConfig.RetEn = 1;
 
 	#ifdef DRAM_TYPE_LPDDR4
@@ -1191,36 +1190,6 @@ void dwc_ddrphy_phyinit_main(void)
 	#include <SP7350/DDR3/dwc_ddrphy_phyinit_out_ddr3_1066_train1d_rank1.txt>
 	#endif
 	#endif
-
-	#elif defined(PLATFORM_Q645)
-	#ifdef SDRAM_SPEED_1600
-	#ifdef NT6AN1024F32AV
-		prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_37_3200_RANK2_DQ_CA_ODT80_WDQS_VREFDQ_332_RxTx2D_04_rdwr2D_3f3f_quick2d\n");
-		#include <Q645/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_37_3200_RANK2_DQ_CA_ODT80_WDQS_VREFDQ_332_RxTx2D_04_rdwr2D_3f3f_quick2d.txt>
-	#elif defined(MT53E1G32D2_A)
-		prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_33_3200_ASIC_RANK1_WDQS_RxTx2D_04_rdwr2D_3f3f_quick2d\n");
-		#include <Q645/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_33_3200_ASIC_RANK1_WDQS_RxTx2D_04_rdwr2D_3f3f_quick2d.txt>
-	#elif defined(MT53D1024M32D4) || defined(MT53E1G32D2_B)
-		prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_27_3200_ASIC_RANK2_WDQS_RxTx2D_04_rdwr2D_3f3f_quick2d\n");
-		#include <Q645/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_27_3200_ASIC_RANK2_WDQS_RxTx2D_04_rdwr2D_3f3f_quick2d.txt>
-	#endif
-	#endif
-
-	#ifdef SDRAM_SPEED_1200
-	prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_35_2400_ASIC_RANK2_WDQA\n");
-	#include <Q645/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_35_2400_ASIC_RANK2_WDQA.txt>
-	#endif
-
-	#ifdef SDRAM_SPEED_800
-	prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_PLL400_SDRAM800_PDDS\n");
-	#include <Q645/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_PLL400_SDRAM800_PDDS.txt>
-	#endif
-
-	#ifdef SDRAM_SPEED_666
-	prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_PLL333_SDRAM666_PDDS\n");
-	#include <Q645/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_PLL333_SDRAM666_PDDS.txt>
-	#endif
-	#endif
 }
 
 // ***********************************************************************
@@ -1234,21 +1203,10 @@ void startClockResetPhy_of_SP(void)
 	//prn_string("\n");
 
 	//dbg_stamp(0xA000);
-#ifdef PLATFORM_Q645
-	SP_REG(0, 22) = RF_MASK_V_SET(1 << 10);	// presetn MO_UMCTL2_RST_B APB BUS reset
-	SP_REG(0, 25) = RF_MASK_V_SET(1 << 9);	// aresetn_0 MO_DDRCTL_RST_B AXI bus reset
-	SP_REG(0, 22) = RF_MASK_V_SET(1 << 4);	// core_ddrc_rstn CLKSDRAM0_SDCTRL0_RST_B uMCTL2 core reset
-	SP_REG(0, 25) = RF_MASK_V_SET(1 << 8);	// PRESETn_APB MO_DDRPHY_RST_B APB bus reset ; CLKDFI_DDRPHY_RST_B dfi_reset
-	SP_REG(3, 24) = RF_MASK_V_SET(1 << 12);	// PwrOkIn MO_DDRPHY_PWROKIN ddrphy pwrokin
-#endif
 	wait_loop(1000);
 	//MO3_REG->mo3_reserved[24] = 0x10001000; //PwrOKIn MO_DDRPHY_PWROKIN ddrphy pwrokin
 	//SP_REG(0, 22) = RF_MASK_V_CLR(1 << 10);	// presetn MO_UMCTL2_RST_B APB BUS reset
 	//SP_REG(0, 25) = RF_MASK_V_CLR(1 << 8);	// PRESETn_APB MO_DDRPHY_RST_B APB bus reset ; CLKDFI_DDRPHY_RST_B dfi_reset
-
-#ifdef PLATFORM_Q645
-	SP_REG(0, 25) = RF_MASK_V_CLR(1 << 0); //CM4 Hardware IP Reset Disable tonyh add 20210608
-#endif
 
 } // end of startClockResetPhy_of_SP
 
@@ -1258,32 +1216,18 @@ void startClockResetUmctl2_of_SP(void)
 	//prn_string("\n");
 
 	dbg_stamp(0xA001);
-
-#ifdef PLATFORM_SP7350
 	SP_REG_AO(0, 14) =0x00200020;
 	SP_REG_AO(0, 14) =0x00010001;
 	wait_loop(1000);
 	SP_REG_AO(0, 14) =0x00080008;
 	wait_loop(1000);
-#elif defined(PLATFORM_Q645)
-	MO3_REG->mo3_reserved[24] = 0x10001000; //PwrOKIn MO_DDRPHY_PWROKIN ddrphy pwrokin
-	SP_REG(0, 22) = RF_MASK_V_CLR(1 << 10);	// presetn MO_UMCTL2_RST_B APB BUS reset
-	SP_REG(0, 22) = RF_MASK_V_CLR(1 << 4);	// core_ddrc_rstn CLKSDRAM0_SDCTRL0_RST_B uMCTL2 core reset
-	wait_loop(1000);
-	SP_REG(0, 25) = RF_MASK_V_CLR(1 << 8);	// PRESETn_APB MO_DDRPHY_RST_B APB bus reset ; CLKDFI_DDRPHY_RST_B dfi_reset
-	wait_loop(1000);
-#endif
 
 	dbg_stamp(0xA002);
 	dwc_umctl2_init_before_ctl_rst();
 
-#ifdef PLATFORM_SP7350
 	SP_REG_AO(0, 14) =0x00020002;
 	SP_REG_AO(0, 14) =0x00040004;
 	SP_REG_AO(0, 14) =0x00100010;
-#elif defined(PLATFORM_Q645)
-	SP_REG(0, 25) = RF_MASK_V_CLR(1 << 9);	// aresetn_0 MO_DDRCTL_RST_B AXI bus reset
-#endif
 
 	wait_loop(1000);
 	wait_loop(1000);
