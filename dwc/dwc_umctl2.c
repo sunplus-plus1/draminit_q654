@@ -513,7 +513,11 @@ int ctl_trigger_init_and_wait_normal()
 	//->TRIG_VIP_REFRESH_CHECK;
 
 	ctl_apb_wr(0x1b0,0x00000050);
+	#ifdef MT53E1G32D2_A
+	ctl_apb_wr(0x1b0,0x00000055); //trigger SDRAM initilaztion.
+	#else
 	ctl_apb_wr(0x1b0,0x00000051); //trigger SDRAM initilaztion.
+	#endif
 	ctl_apb_wr(0x030,0x00000000); //PWRCTL
 	ctl_apb_wr(0x030,0x00000000);
 	ctl_apb_wr(0x320,0x00000001); //SWCTL
