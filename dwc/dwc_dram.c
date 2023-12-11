@@ -1187,6 +1187,10 @@ void dwc_ddrphy_phyinit_main(void)
 	#include <SP7350/DDR3/dwc_ddrphy_phyinit_out_ddr3_1066_train1d_rank1.txt>
 	#endif
 	#endif
+
+	#ifdef LCDL_testing
+	dwc_ddrphy_LCDL_testing();
+	#endif
 }
 
 // ***********************************************************************
@@ -1405,3 +1409,41 @@ int dwc_ddrphy_phyinit_userCustom_E_setDfiClk (int pstate /*!< Input Pstate indi
 	#endif
     return (pstate);
 }
+
+#ifdef LCDL_testing
+void dwc_ddrphy_LCDL_testing(void)
+{
+	dwc_ddrphy_apb_wr(0xd0000, 0x0);
+	dwc_ddrphy_apb_wr(0x20084, 0x0);/*LcdlCalPhase[8:0] delay sel = [1:511]*/
+	dwc_ddrphy_apb_wr(0x20085, 0x9);/*LcdlCalPhaseUpdate*/
+	dwc_ddrphy_apb_wr(0x20085, 0x0);/*LcdlCalPhaseUpdate*/
+	dwc_ddrphy_apb_wr(0x200d3, 0x4000);/*DlyTestCntDfiClkIV[15:0]*/
+	dwc_ddrphy_apb_wr(0x200d0, 0x3);/*DlyTestCntInit*/
+	dwc_ddrphy_apb_wr(0x200d0, 0x1);/*DlyTestCntInit*/
+
+	dwc_ddrphy_apb_wr(0xd0000, 0x1);
+	UINT16 rd_data;
+	for(int i=1; i<512; i=i+17){
+		dwc_ddrphy_apb_wr(0x20084, i);/*LcdlCalPhase[8:0] delay sel = [1:511]*/
+		dwc_ddrphy_apb_wr(0x20085, 0x9);/*LcdlCalPhaseUpdate*/
+		dwc_ddrphy_apb_wr(0x20085, 0x0);/*LcdlCalPhaseUpdate*/
+		dwc_ddrphy_apb_wr(0x200d3, 0x4000);/*DlyTestCntDfiClkIV[15:0]*/
+		dwc_ddrphy_apb_wr(0x200d0, 0x3);/*DlyTestCntInit*/
+		dwc_ddrphy_apb_wr(0x200d0, 0x1);/*DlyTestCntInit*/
+	}
+
+	while(1){
+		rd_data = dwc_ddrphy_apb_rd(0x200d4);/*DlyTestCntDfiClk[15:0] wait to zero*/
+		if(rd_data == 0x0)
+			break;
+	}
+	rd_data = dwc_ddrphy_apb_rd(0x200d5);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
+	rd_data = dwc_ddrphy_apb_rd(0x200d6);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
+	rd_data = dwc_ddrphy_apb_rd(0x200d7);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
+	rd_data = dwc_ddrphy_apb_rd(0x200d8);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
+	rd_data = dwc_ddrphy_apb_rd(0x200df);/*DlyTestCntRing0scAc[15:0] read data*/
+
+	prn_string("dwc_ddrphy_LCDL_end\n");
+	while (1);
+}
+#endif

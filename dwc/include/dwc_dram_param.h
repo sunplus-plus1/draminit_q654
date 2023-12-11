@@ -26,6 +26,7 @@
 
 //#define STREAM_MESSAGE
 //#define CHANGE_CLOCK
+//#define LCDL_testing
 #if defined(CONFIG_NT6AN1024F32AV)
 #define NT6AN1024F32AV
 #elif defined(CONFIG_MT53D1024M32D4)
