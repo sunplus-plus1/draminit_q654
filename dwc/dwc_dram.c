@@ -130,7 +130,7 @@ UINT16 dwc_ddrphy_apb_rd(UINT32 adr)
 	//dwc_ddrphy_phyinit_print ("dwc_ddrphy_apb_rd(12'h%x, rd_data);\n", adr);
 	value= DWC_PHY_REG(adr);
 
-#if 0
+	#if 0
 	if(mp == 1)
 	{
 		prn_string("APB R  PUB  ");
@@ -139,7 +139,7 @@ UINT16 dwc_ddrphy_apb_rd(UINT32 adr)
 		prn_dword0(value);
 		prn_string("\n");
 	}
-#endif
+	#endif
 	return value;
 }
 
@@ -1060,8 +1060,13 @@ void dwc_ddrphy_phyinit_restoreRetention(void)
 
 void dwc_ddrphy_phyinit_main(void)
 {
-	prn_string("dwc_ddrphy_phyinit_main 20230714\n");
+
+	prn_string("dwc_ddrphy_phyinit_main 20231212\n");
 	mp = 1;
+
+	#ifdef LCDL_testing
+	dwc_ddrphy_LCDL_testing();
+	#endif
 	//runtimeConfig.RetEn = 1;
 
 	#ifdef DRAM_TYPE_LPDDR4
@@ -1188,9 +1193,6 @@ void dwc_ddrphy_phyinit_main(void)
 	#endif
 	#endif
 
-	#ifdef LCDL_testing
-	dwc_ddrphy_LCDL_testing();
-	#endif
 }
 
 // ***********************************************************************
@@ -1413,6 +1415,7 @@ int dwc_ddrphy_phyinit_userCustom_E_setDfiClk (int pstate /*!< Input Pstate indi
 #ifdef LCDL_testing
 void dwc_ddrphy_LCDL_testing(void)
 {
+	prn_string("dwc_ddrphy_LCDL_testing start\n");
 	dwc_ddrphy_apb_wr(0xd0000, 0x0);
 	dwc_ddrphy_apb_wr(0x20084, 0x0);/*LcdlCalPhase[8:0] delay sel = [1:511]*/
 	dwc_ddrphy_apb_wr(0x20085, 0x9);/*LcdlCalPhaseUpdate*/
@@ -1421,7 +1424,7 @@ void dwc_ddrphy_LCDL_testing(void)
 	dwc_ddrphy_apb_wr(0x200d0, 0x3);/*DlyTestCntInit*/
 	dwc_ddrphy_apb_wr(0x200d0, 0x1);/*DlyTestCntInit*/
 
-	dwc_ddrphy_apb_wr(0xd0000, 0x1);
+	dwc_ddrphy_apb_wr(0xd0000, 0x0);
 	UINT16 rd_data;
 	for(int i=1; i<512; i=i+17){
 		dwc_ddrphy_apb_wr(0x20084, i);/*LcdlCalPhase[8:0] delay sel = [1:511]*/
@@ -1442,8 +1445,8 @@ void dwc_ddrphy_LCDL_testing(void)
 	rd_data = dwc_ddrphy_apb_rd(0x200d7);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
 	rd_data = dwc_ddrphy_apb_rd(0x200d8);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
 	rd_data = dwc_ddrphy_apb_rd(0x200df);/*DlyTestCntRing0scAc[15:0] read data*/
+	dwc_ddrphy_apb_wr(0x200d0, 0x0);/*DlytestCntInit*/
 
-	prn_string("dwc_ddrphy_LCDL_end\n");
-	while (1);
+	prn_string("dwc_ddrphy_LCDL_testing end\n");
 }
 #endif
