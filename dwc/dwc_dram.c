@@ -1433,20 +1433,19 @@ void dwc_ddrphy_LCDL_testing(void)
 		dwc_ddrphy_apb_wr(0x200d3, 0x4000);/*DlyTestCntDfiClkIV[15:0]*/
 		dwc_ddrphy_apb_wr(0x200d0, 0x3);/*DlyTestCntInit*/
 		dwc_ddrphy_apb_wr(0x200d0, 0x1);/*DlyTestCntInit*/
-	}
 
-	while(1){
-		rd_data = dwc_ddrphy_apb_rd(0x200d4);/*DlyTestCntDfiClk[15:0] wait to zero*/
-		if(rd_data == 0x0)
-			break;
+		while(1){
+			rd_data = dwc_ddrphy_apb_rd(0x200d4);/*DlyTestCntDfiClk[15:0] wait to zero*/
+			if(rd_data == 0x0)
+				break;
+		}
+		rd_data = dwc_ddrphy_apb_rd(0x200d5);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
+		rd_data = dwc_ddrphy_apb_rd(0x200d6);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
+		rd_data = dwc_ddrphy_apb_rd(0x200d7);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
+		rd_data = dwc_ddrphy_apb_rd(0x200d8);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
+		rd_data = dwc_ddrphy_apb_rd(0x200df);/*DlyTestCntRing0scAc[15:0] read data*/
 	}
-	rd_data = dwc_ddrphy_apb_rd(0x200d5);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
-	rd_data = dwc_ddrphy_apb_rd(0x200d6);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
-	rd_data = dwc_ddrphy_apb_rd(0x200d7);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
-	rd_data = dwc_ddrphy_apb_rd(0x200d8);/*DlyTestCntRing0scDb<$db>[15:0] read data*/
-	rd_data = dwc_ddrphy_apb_rd(0x200df);/*DlyTestCntRing0scAc[15:0] read data*/
 	dwc_ddrphy_apb_wr(0x200d0, 0x0);/*DlytestCntInit*/
-
 	prn_string("dwc_ddrphy_LCDL_testing end\n");
 }
 #endif
