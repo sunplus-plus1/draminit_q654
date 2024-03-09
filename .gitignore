@@ -5,3 +5,4 @@
 autogen.ld
 bin/
 .depend
+dwc/include/auto_config.h
