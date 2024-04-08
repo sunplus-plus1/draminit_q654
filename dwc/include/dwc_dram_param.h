@@ -37,6 +37,10 @@
 #define MT53E1G32D2_B  /*Micron 1Gbx32, 2 rank, FBGA code = D8CJG*/
 #elif defined(CONFIG_MT53E2G32D4_C)
 #define MT53E2G32D4_C  /*Micron 2Gbx32, 2 rank, FBGA code = D8CJN*/
+#elif defined(CONFIG_RS1G32LO4D2BDS)
+#define RS1G32LO4D2BDS  /*Rayson 1Gbx32, 2 rank*/
+#elif defined(CONFIG_HG4XD04G)
+#define HG4XD04G  /*Hosinglobal 1Gbx32, 2 rank*/
 #elif defined(CONFIG_MT40A512M16TB)
 #define MT40A512M16TB  /*Micron 512Mx16, 1 rank, FBGA code = D8BPK*/
 #elif defined(CONFIG_MT41K512M16VRP)
