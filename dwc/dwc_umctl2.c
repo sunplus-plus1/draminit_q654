@@ -147,6 +147,8 @@ int dwc_umctl2_init_before_ctl_rst(void)
 	prn_string("MT40A512M16TB, 1rank, FBGA=D8BPK\n");
 #elif defined(MT41K512M16VRP)
 	prn_string("MT41K512M16VRP, 1rank, FBGA=D9ZWN\n");
+#elif defined(K4B8G1646D)
+	prn_string("K4B8G1646D, SAMSUNG 512Mx16, 2rank\n");
 #endif
 	return 0;
 }

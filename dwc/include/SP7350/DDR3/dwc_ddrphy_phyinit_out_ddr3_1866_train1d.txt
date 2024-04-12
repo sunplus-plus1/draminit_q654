@@ -596,8 +596,12 @@ dwc_ddrphy_apb_wr(0x54004,0x2);
 dwc_ddrphy_apb_wr(0x54005,0x0);
 dwc_ddrphy_apb_wr(0x54006,0x140);
 dwc_ddrphy_apb_wr(0x54007,0x2000);
-//dwc_ddrphy_apb_wr(0x54008,0x303);
-dwc_ddrphy_apb_wr(0x54008,0x101);//tonyh test
+#ifdef MT41K512M16VRP //for 1rank
+dwc_ddrphy_apb_wr(0x54008,0x101);
+#endif
+#ifdef K4B8G1646D //for 2ranks
+dwc_ddrphy_apb_wr(0x54008,0x303);
+#endif
 dwc_ddrphy_apb_wr(0x54009,0x0);
 dwc_ddrphy_apb_wr(0x5400a,0x0);
 dwc_ddrphy_apb_wr(0x5400b,0x31f);
