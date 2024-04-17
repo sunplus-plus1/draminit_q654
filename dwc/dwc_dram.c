@@ -111,7 +111,7 @@ void wait_loop(unsigned int wait_counter)
 void dwc_ddrphy_apb_wr(UINT32 adr, UINT32 dat)
 {
 	//dwc_ddrphy_phyinit_print ("dwc_ddrphy_apb_wr(12'h%x, 32'h%x);\n", adr, dat);
-	#if 0
+	#ifdef Diagnostic_test
 	if(mp == 1)
 	{
 		prn_string("APB W  PUB  ");
@@ -130,7 +130,7 @@ UINT16 dwc_ddrphy_apb_rd(UINT32 adr)
 	//dwc_ddrphy_phyinit_print ("dwc_ddrphy_apb_rd(12'h%x, rd_data);\n", adr);
 	value= DWC_PHY_REG(adr);
 
-	#if 0
+	#ifdef Diagnostic_test
 	if(mp == 1)
 	{
 		prn_string("APB R  PUB  ");
@@ -1193,6 +1193,9 @@ void dwc_ddrphy_phyinit_main(void)
 	#endif
 	#endif
 
+	#ifdef Diagnostic_test
+	dwc_ddrphy_phyinit_sequence (1, 1, 0);
+	#endif
 }
 
 // ***********************************************************************

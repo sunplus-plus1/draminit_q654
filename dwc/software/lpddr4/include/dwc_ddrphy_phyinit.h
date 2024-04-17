@@ -5,7 +5,7 @@
  * cdefine for a PhyInit Revision ID
  */
 #define DWC_DDRPHY_PHYINIT_RID 202006
-
+//#define Diagnostic_test
 //#############################################################################
 // Global Structures : instantiated in dwc_ddrphy_globals.c
 //#############################################################################
