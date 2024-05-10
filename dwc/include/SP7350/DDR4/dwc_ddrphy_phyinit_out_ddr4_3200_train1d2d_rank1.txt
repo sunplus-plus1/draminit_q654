@@ -686,7 +686,7 @@ dwc_ddrphy_apb_wr(0x13143,0x5b1);
 dwc_ddrphy_apb_wr(0x200fa,0x1);
 // // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1600MHz, Programming TristateModeCA::DisDynAdrTri_p0 to 0x0
 // // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1600MHz, Programming TristateModeCA::DDR2TMode_p0 to 0x0
-dwc_ddrphy_apb_wr(0x20019,0x4);
+dwc_ddrphy_apb_wr(0x20019,0x7);
 // // [phyinit_C_initPhyConfig] Programming DfiFreqXlat*
 dwc_ddrphy_apb_wr(0x200f0,0x5555);
 dwc_ddrphy_apb_wr(0x200f1,0x5555);
@@ -862,7 +862,8 @@ dwc_ddrphy_apb_wr(0x54006,0x25a);
 dwc_ddrphy_apb_wr(0x54007,0x2000);
 dwc_ddrphy_apb_wr(0x54008,0x101);
 dwc_ddrphy_apb_wr(0x54009,0x0);
-dwc_ddrphy_apb_wr(0x5400a,0x0);
+//dwc_ddrphy_apb_wr(0x5400a,0x0);
+dwc_ddrphy_apb_wr(0x5400a,0x100);
 dwc_ddrphy_apb_wr(0x5400b,0x31f);
 dwc_ddrphy_apb_wr(0x5400c,0x4);
 dwc_ddrphy_apb_wr(0x5400d,0x100);
@@ -1070,7 +1071,8 @@ dwc_ddrphy_apb_wr(0x54006,0x25a);
 dwc_ddrphy_apb_wr(0x54007,0x2000);
 dwc_ddrphy_apb_wr(0x54008,0x101);
 dwc_ddrphy_apb_wr(0x54009,0x0);
-dwc_ddrphy_apb_wr(0x5400a,0x0);
+//dwc_ddrphy_apb_wr(0x5400a,0x0);
+dwc_ddrphy_apb_wr(0x5400a,0x100);
 dwc_ddrphy_apb_wr(0x5400b,0x61);
 dwc_ddrphy_apb_wr(0x5400c,0x4);
 dwc_ddrphy_apb_wr(0x5400d,0x100);
