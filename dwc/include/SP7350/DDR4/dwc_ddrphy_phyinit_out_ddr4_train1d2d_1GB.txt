@@ -1,0 +1,1429 @@
+//========================== Note Path ==========================
+// /home/dqak654temp/dz.he/FW/ddr4/21_ddr4_2666_datarate_X16_ASIC_rank1/dwc_ddrphy_phyinit_out_ddr4_train1d2d.txt
+//========================== Note Path ==========================
+
+// [dwc_ddrphy_phyinit_main] Start of dwc_ddrphy_phyinit_main()
+// [dwc_ddrphy_phyinit_sequence] Start of dwc_ddrphy_phyinit_sequence()
+// [dwc_ddrphy_phyinit_initStruct] Start of dwc_ddrphy_phyinit_initStruct()
+// [dwc_ddrphy_phyinit_initStruct] End of dwc_ddrphy_phyinit_initStruct()
+// [dwc_ddrphy_phyinit_setDefault] Start of dwc_ddrphy_phyinit_setDefault()
+// [dwc_ddrphy_phyinit_setDefault] End of dwc_ddrphy_phyinit_setDefault()
+
+
+// //##############################################################
+//
+// // dwc_ddrphy_phyinit_userCustom_overrideUserInput is a user-editable function.
+// //
+// // See PhyInit App Note for detailed description and function usage
+//
+// //##############################################################
+
+dwc_ddrphy_phyinit_userCustom_overrideUserInput ();
+//
+//  [dwc_ddrphy_phyinit_userCustom_overrideUserInput] End of dwc_ddrphy_phyinit_userCustom_overrideUserInput()
+//[dwc_ddrphy_phyinit_calcMb] Start of dwc_ddrphy_phyinit_calcMb()
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].DramType to 0x2
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].Pstate to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].DRAMFreq to 0xa6a
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].PllBypassEn to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].DfiFreqRatio to 0x2
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].PhyOdtImpedance to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].PhyDrvImpedance to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].BPZNResVal to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].EnabledDQs to 0x10
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].DisabledDbyte to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].PhyCfg to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_1D[0].X16Present to 0x1
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].DramType to 0x2
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].Pstate to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].DRAMFreq to 0xa6a
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].PllBypassEn to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].DfiFreqRatio to 0x2
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].PhyOdtImpedance to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].PhyDrvImpedance to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].BPZNResVal to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].EnabledDQs to 0x10
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].DisabledDbyte to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].PhyCfg to 0x0
+// // [dwc_ddrphy_phyinit_softSetMb] Setting mb_DDR4U_2D[0].X16Present to 0x1
+//[dwc_ddrphy_phyinit_calcMb] End of dwc_ddrphy_phyinit_calcMb()
+// // [phyinit_print_dat] // ####################################################
+// // [phyinit_print_dat] //
+// // [phyinit_print_dat] // Printing Runtime input values
+// // [phyinit_print_dat] //
+// // [phyinit_print_dat] // ####################################################
+// // [phyinit_print_dat] runtimeConfig.skip_training = 0
+// // [phyinit_print_dat] runtimeConfig.Train2D       = 1
+// // [phyinit_print_dat] runtimeConfig.debug         = 1
+// // [phyinit_print_dat] runtimeConfig.RetEn         = 0
+// // [phyinit_print_dat] // ####################################################
+// // [phyinit_print_dat] //
+// // [phyinit_print_dat] // Printing values in user input structure
+// // [phyinit_print_dat] //
+// // [phyinit_print_dat] // ####################################################
+// // [phyinit_print_dat] userInputBasic.Frequency[0] = 1333
+// // [phyinit_print_dat] userInputBasic.Frequency[1] = 1067
+// // [phyinit_print_dat] userInputBasic.Frequency[2] = 933
+// // [phyinit_print_dat] userInputBasic.Frequency[3] = 800
+// // [phyinit_print_dat] userInputBasic.NumRank_dfi0 = 1
+// // [phyinit_print_dat] userInputBasic.ReadDBIEnable[0] = 0
+// // [phyinit_print_dat] userInputBasic.ReadDBIEnable[1] = 0
+// // [phyinit_print_dat] userInputBasic.ReadDBIEnable[2] = 0
+// // [phyinit_print_dat] userInputBasic.ReadDBIEnable[3] = 0
+// // [phyinit_print_dat] userInputBasic.Lp4xMode = 0
+// // [phyinit_print_dat] userInputBasic.DimmType = 4
+// // [phyinit_print_dat] userInputBasic.DfiMode = 0
+// // [phyinit_print_dat] userInputBasic.DramType = 0
+// // [phyinit_print_dat] userInputBasic.HardMacroVer = 0
+// // [phyinit_print_dat] userInputBasic.DfiFreqRatio[0] = 1
+// // [phyinit_print_dat] userInputBasic.DfiFreqRatio[1] = 1
+// // [phyinit_print_dat] userInputBasic.DfiFreqRatio[2] = 1
+// // [phyinit_print_dat] userInputBasic.DfiFreqRatio[3] = 1
+// // [phyinit_print_dat] userInputBasic.NumAnib = 10
+// // [phyinit_print_dat] userInputBasic.NumDbyte = 2
+// // [phyinit_print_dat] userInputBasic.DramDataWidth = 16
+// // [phyinit_print_dat] userInputBasic.PllBypass[0] = 0
+// // [phyinit_print_dat] userInputBasic.PllBypass[1] = 0
+// // [phyinit_print_dat] userInputBasic.PllBypass[2] = 0
+// // [phyinit_print_dat] userInputBasic.PllBypass[3] = 0
+// // [phyinit_print_dat] userInputBasic.Dfi1Exists = 1
+// // [phyinit_print_dat] userInputBasic.Train2D = 0
+// // [phyinit_print_dat] userInputBasic.NumRank_dfi1 = 0
+// // [phyinit_print_dat] userInputBasic.NumActiveDbyteDfi0 = 2
+// // [phyinit_print_dat] userInputBasic.NumPStates = 1
+// // [phyinit_print_dat] userInputBasic.NumActiveDbyteDfi1 = 0
+// // [phyinit_print_dat] userInputAdvanced.DisDynAdrTri[0] = 0
+// // [phyinit_print_dat] userInputAdvanced.DisDynAdrTri[1] = 0
+// // [phyinit_print_dat] userInputAdvanced.DisDynAdrTri[2] = 0
+// // [phyinit_print_dat] userInputAdvanced.DisDynAdrTri[3] = 0
+// // [phyinit_print_dat] userInputAdvanced.SnpsUmctlF0RC5x[0] = 0
+// // [phyinit_print_dat] userInputAdvanced.SnpsUmctlF0RC5x[1] = 0
+// // [phyinit_print_dat] userInputAdvanced.SnpsUmctlF0RC5x[2] = 0
+// // [phyinit_print_dat] userInputAdvanced.SnpsUmctlF0RC5x[3] = 0
+// // [phyinit_print_dat] userInputAdvanced.MemAlertEn = 0
+// // [phyinit_print_dat] userInputAdvanced.EnableHighClkSkewFix = 0
+// // [phyinit_print_dat] userInputAdvanced.DramByteSwap = 0
+// // [phyinit_print_dat] userInputAdvanced.ExtCalResVal = 0
+// // [phyinit_print_dat] userInputAdvanced.TxSlewRiseDQ[0] = 4
+// // [phyinit_print_dat] userInputAdvanced.TxSlewRiseDQ[1] = 4
+// // [phyinit_print_dat] userInputAdvanced.TxSlewRiseDQ[2] = 4
+// // [phyinit_print_dat] userInputAdvanced.TxSlewRiseDQ[3] = 4
+// // [phyinit_print_dat] userInputAdvanced.D4TxPreambleLength[0] = 0
+// // [phyinit_print_dat] userInputAdvanced.D4TxPreambleLength[1] = 0
+// // [phyinit_print_dat] userInputAdvanced.D4TxPreambleLength[2] = 0
+// // [phyinit_print_dat] userInputAdvanced.D4TxPreambleLength[3] = 0
+// // [phyinit_print_dat] userInputAdvanced.RxEnBackOff = 0
+// // [phyinit_print_dat] userInputAdvanced.D4RxPreambleLength[0] = 1
+// // [phyinit_print_dat] userInputAdvanced.D4RxPreambleLength[1] = 1
+// // [phyinit_print_dat] userInputAdvanced.D4RxPreambleLength[2] = 1
+// // [phyinit_print_dat] userInputAdvanced.D4RxPreambleLength[3] = 1
+// // [phyinit_print_dat] userInputAdvanced.TxSlewFallDQ[0] = 15
+// // [phyinit_print_dat] userInputAdvanced.TxSlewFallDQ[1] = 15
+// // [phyinit_print_dat] userInputAdvanced.TxSlewFallDQ[2] = 15
+// // [phyinit_print_dat] userInputAdvanced.TxSlewFallDQ[3] = 15
+// // [phyinit_print_dat] userInputAdvanced.CalOnce = 0
+// // [phyinit_print_dat] userInputAdvanced.PhyMstrMaxReqToAck[0] = 0
+// // [phyinit_print_dat] userInputAdvanced.PhyMstrMaxReqToAck[1] = 0
+// // [phyinit_print_dat] userInputAdvanced.PhyMstrMaxReqToAck[2] = 0
+// // [phyinit_print_dat] userInputAdvanced.PhyMstrMaxReqToAck[3] = 0
+// // [phyinit_print_dat] userInputAdvanced.DisableUnusedAddrLns = 0
+// // [phyinit_print_dat] userInputAdvanced.TxSlewFallAC = 4
+// // [phyinit_print_dat] userInputAdvanced.ATxImpedance = 30
+// // [phyinit_print_dat] userInputAdvanced.PhyInitSequenceNum = 0
+// // [phyinit_print_dat] userInputAdvanced.Is2Ttiming[0] = 0
+// // [phyinit_print_dat] userInputAdvanced.Is2Ttiming[1] = 0
+// // [phyinit_print_dat] userInputAdvanced.Is2Ttiming[2] = 0
+// // [phyinit_print_dat] userInputAdvanced.Is2Ttiming[3] = 0
+// // [phyinit_print_dat] userInputAdvanced.MemAlertVrefLevel = 41
+// // [phyinit_print_dat] userInputAdvanced.PhyMstrTrainInterval[0] = 0
+// // [phyinit_print_dat] userInputAdvanced.PhyMstrTrainInterval[1] = 0
+// // [phyinit_print_dat] userInputAdvanced.PhyMstrTrainInterval[2] = 0
+// // [phyinit_print_dat] userInputAdvanced.PhyMstrTrainInterval[3] = 0
+// // [phyinit_print_dat] userInputAdvanced.SnpsUmctlOpt = 0
+// // [phyinit_print_dat] userInputAdvanced.CalInterval = 9
+// // [phyinit_print_dat] userInputAdvanced.WDQSExt = 0
+// // [phyinit_print_dat] userInputAdvanced.MemAlertPUImp = 5
+// // [phyinit_print_dat] userInputAdvanced.ODTImpedance[0] = 60
+// // [phyinit_print_dat] userInputAdvanced.ODTImpedance[1] = 60
+// // [phyinit_print_dat] userInputAdvanced.ODTImpedance[2] = 60
+// // [phyinit_print_dat] userInputAdvanced.ODTImpedance[3] = 60
+// // [phyinit_print_dat] userInputAdvanced.TxSlewRiseAC = 4
+// // [phyinit_print_dat] userInputAdvanced.TrainSequenceCtrl = 0
+// // [phyinit_print_dat] userInputAdvanced.MemAlertSyncBypass = 0
+// // [phyinit_print_dat] userInputAdvanced.TxImpedance[0] = 53
+// // [phyinit_print_dat] userInputAdvanced.TxImpedance[1] = 53
+// // [phyinit_print_dat] userInputAdvanced.TxImpedance[2] = 53
+// // [phyinit_print_dat] userInputAdvanced.TxImpedance[3] = 53
+// // [phyinit_print_dat] userInputSim.tDQS2DQ    = 0
+// // [phyinit_print_dat] userInputSim.tDQSCK     = 0
+// // [phyinit_print_dat] userInputSim.tSTAOFF[0] = 0
+// // [phyinit_print_dat] userInputSim.tSTAOFF[1] = 0
+// // [phyinit_print_dat] userInputSim.tSTAOFF[2] = 0
+// // [phyinit_print_dat] userInputSim.tSTAOFF[3] = 0
+// // [phyinit_print_dat] // ####################################################
+// // [phyinit_print_dat] //
+// // [phyinit_print_dat] // Printing values of 1D message block input/inout fields, PState=0
+// // [phyinit_print_dat] //
+// // [phyinit_print_dat] // ####################################################
+// // [phyinit_print_dat] mb_DDR4U_1D[0].Reserved00 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].MsgMisc = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].Pstate = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].PllBypassEn = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].DRAMFreq = 0xa6a
+// // [phyinit_print_dat] mb_DDR4U_1D[0].DfiFreqRatio = 0x2
+// // [phyinit_print_dat] mb_DDR4U_1D[0].BPZNResVal = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].PhyOdtImpedance = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].PhyDrvImpedance = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].PhyVref = 0x5a
+// // [phyinit_print_dat] mb_DDR4U_1D[0].DramType = 0x2
+// // [phyinit_print_dat] mb_DDR4U_1D[0].DisabledDbyte = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].EnabledDQs = 0x10
+// // [phyinit_print_dat] mb_DDR4U_1D[0].CsPresent = 0x1
+// // [phyinit_print_dat] mb_DDR4U_1D[0].CsPresentD0 = 0x1
+// // [phyinit_print_dat] mb_DDR4U_1D[0].CsPresentD1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].AddrMirror = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].PhyCfg = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].SequenceCtrl = 0x31f
+// // [phyinit_print_dat] mb_DDR4U_1D[0].HdtCtrl = 0x4
+// // [phyinit_print_dat] mb_DDR4U_1D[0].Share2DVrefResult = 0x1
+// // [phyinit_print_dat] mb_DDR4U_1D[0].Reserved1E = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].Reserved1F = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].Reserved20 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].Reserved21 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].PhyConfigOverride = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].DFIMRLMargin = 0x1
+// // [phyinit_print_dat] mb_DDR4U_1D[0].Reserved5D = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].MR0 = 0xb44
+// // [phyinit_print_dat] mb_DDR4U_1D[0].MR1 = 0x503
+// // [phyinit_print_dat] mb_DDR4U_1D[0].MR2 = 0x20
+// // [phyinit_print_dat] mb_DDR4U_1D[0].MR3 = 0x200
+// // [phyinit_print_dat] mb_DDR4U_1D[0].MR4 = 0x800
+// // [phyinit_print_dat] mb_DDR4U_1D[0].MR5 = 0x140
+// // [phyinit_print_dat] mb_DDR4U_1D[0].MR6 = 0x1017
+// // [phyinit_print_dat] mb_DDR4U_1D[0].X16Present = 0x1
+// // [phyinit_print_dat] mb_DDR4U_1D[0].CsSetupGDDec = 0x1
+// // [phyinit_print_dat] mb_DDR4U_1D[0].RTT_NOM_WR_PARK0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].RTT_NOM_WR_PARK1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].RTT_NOM_WR_PARK2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].RTT_NOM_WR_PARK3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].RTT_NOM_WR_PARK4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].RTT_NOM_WR_PARK5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].RTT_NOM_WR_PARK6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].RTT_NOM_WR_PARK7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].AcsmOdtCtrl0 = 0x21
+// // [phyinit_print_dat] mb_DDR4U_1D[0].AcsmOdtCtrl1 = 0x12
+// // [phyinit_print_dat] mb_DDR4U_1D[0].AcsmOdtCtrl2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].AcsmOdtCtrl3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].AcsmOdtCtrl4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].AcsmOdtCtrl5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].AcsmOdtCtrl6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].AcsmOdtCtrl7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib8 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib9 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib10 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib11 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib12 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib13 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib14 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib15 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib16 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib17 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib18 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR0Nib19 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib8 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib9 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib10 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib11 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib12 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib13 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib14 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib15 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib16 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib17 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib18 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR1Nib19 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib8 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib9 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib10 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib11 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib12 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib13 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib14 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib15 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib16 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib17 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib18 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR2Nib19 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib8 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib9 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib10 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib11 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib12 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib13 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib14 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib15 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib16 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib17 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib18 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].VrefDqR3Nib19 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].ALT_CAS_L = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].ALT_WCAS_L = 0x0
+// // [phyinit_print_dat] mb_DDR4U_1D[0].D4Misc = 0x1
+// // [phyinit_print_dat] // ####################################################
+// // [phyinit_print_dat] //
+// // [phyinit_print_dat] // Printing values of 2D message block input/inout fields, PState=0
+// // [phyinit_print_dat] //
+// // [phyinit_print_dat] // ####################################################
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved00 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].MsgMisc = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Pstate = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].PllBypassEn = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].DRAMFreq = 0xa6a
+// // [phyinit_print_dat] mb_DDR4U_2D[0].DfiFreqRatio = 0x2
+// // [phyinit_print_dat] mb_DDR4U_2D[0].BPZNResVal = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].PhyOdtImpedance = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].PhyDrvImpedance = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].PhyVref = 0x5a
+// // [phyinit_print_dat] mb_DDR4U_2D[0].DramType = 0x2
+// // [phyinit_print_dat] mb_DDR4U_2D[0].DisabledDbyte = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].EnabledDQs = 0x10
+// // [phyinit_print_dat] mb_DDR4U_2D[0].CsPresent = 0x1
+// // [phyinit_print_dat] mb_DDR4U_2D[0].CsPresentD0 = 0x1
+// // [phyinit_print_dat] mb_DDR4U_2D[0].CsPresentD1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].AddrMirror = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].PhyCfg = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].SequenceCtrl = 0x61
+// // [phyinit_print_dat] mb_DDR4U_2D[0].HdtCtrl = 0x4
+// // [phyinit_print_dat] mb_DDR4U_2D[0].RX2D_TrainOpt = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].TX2D_TrainOpt = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Share2DVrefResult = 0x1
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Delay_Weight2D = 0x20
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Voltage_Weight2D = 0x80
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved1E = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved1F = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved20 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved21 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].PhyConfigOverride = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].DFIMRLMargin = 0x1
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved30 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved31 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved32 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved53 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved58 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved5A = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved5B = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved5C = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].Reserved5D = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].MR0 = 0xb44
+// // [phyinit_print_dat] mb_DDR4U_2D[0].MR1 = 0x503
+// // [phyinit_print_dat] mb_DDR4U_2D[0].MR2 = 0x20
+// // [phyinit_print_dat] mb_DDR4U_2D[0].MR3 = 0x200
+// // [phyinit_print_dat] mb_DDR4U_2D[0].MR4 = 0x800
+// // [phyinit_print_dat] mb_DDR4U_2D[0].MR5 = 0x140
+// // [phyinit_print_dat] mb_DDR4U_2D[0].MR6 = 0x1017
+// // [phyinit_print_dat] mb_DDR4U_2D[0].X16Present = 0x1
+// // [phyinit_print_dat] mb_DDR4U_2D[0].CsSetupGDDec = 0x1
+// // [phyinit_print_dat] mb_DDR4U_2D[0].RTT_NOM_WR_PARK0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].RTT_NOM_WR_PARK1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].RTT_NOM_WR_PARK2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].RTT_NOM_WR_PARK3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].RTT_NOM_WR_PARK4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].RTT_NOM_WR_PARK5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].RTT_NOM_WR_PARK6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].RTT_NOM_WR_PARK7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].AcsmOdtCtrl0 = 0x21
+// // [phyinit_print_dat] mb_DDR4U_2D[0].AcsmOdtCtrl1 = 0x12
+// // [phyinit_print_dat] mb_DDR4U_2D[0].AcsmOdtCtrl2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].AcsmOdtCtrl3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].AcsmOdtCtrl4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].AcsmOdtCtrl5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].AcsmOdtCtrl6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].AcsmOdtCtrl7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib8 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib9 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib10 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib11 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib12 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib13 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib14 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib15 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib16 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib17 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib18 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR0Nib19 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib8 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib9 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib10 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib11 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib12 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib13 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib14 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib15 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib16 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib17 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib18 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR1Nib19 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib8 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib9 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib10 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib11 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib12 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib13 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib14 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib15 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib16 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib17 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib18 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR2Nib19 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib0 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib1 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib2 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib3 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib4 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib5 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib6 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib7 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib8 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib9 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib10 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib11 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib12 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib13 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib14 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib15 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib16 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib17 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib18 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].VrefDqR3Nib19 = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].ALT_CAS_L = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].ALT_WCAS_L = 0x0
+// // [phyinit_print_dat] mb_DDR4U_2D[0].D4Misc = 0x1
+
+
+// //##############################################################
+// //
+// // Step (A) : Bring up VDD, VDDQ, and VAA
+// //
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+
+
+dwc_ddrphy_phyinit_userCustom_A_bringupPower ();
+
+// [dwc_ddrphy_phyinit_userCustom_A_bringupPower] End of dwc_ddrphy_phyinit_userCustom_A_bringupPower()
+// [dwc_ddrphy_phyinit_userCustom_B_startClockResetPhy] Start of dwc_ddrphy_phyinit_userCustom_B_startClockResetPhy()
+//
+//
+// //##############################################################
+// //
+// // Step (B) Start Clocks and Reset the PHY
+// //
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+//
+dwc_ddrphy_phyinit_userCustom_B_startClockResetPhy ();
+
+// [dwc_ddrphy_phyinit_userCustom_B_startClockResetPhy] End of dwc_ddrphy_phyinit_userCustom_B_startClockResetPhy()
+//
+
+// //##############################################################
+// //
+// // Step (C) Initialize PHY Configuration
+// //
+// // Load the required PHY configuration registers for the appropriate mode and memory configuration
+// //
+// //##############################################################
+//
+
+// // [phyinit_C_initPhyConfig] Start of dwc_ddrphy_phyinit_C_initPhyConfig()
+//
+// //##############################################################
+// // TxPreDrvMode[2] = 0
+// //##############################################################
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming TxSlewRate::TxPreDrvMode to 0x2
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming TxSlewRate::TxPreP to 0x4
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming TxSlewRate::TxPreN to 0xf
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for TxSlewRate::TxPreP and TxSlewRate::TxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x1005f,0x2f4);
+dwc_ddrphy_apb_wr(0x1015f,0x2f4);
+dwc_ddrphy_apb_wr(0x1105f,0x2f4);
+dwc_ddrphy_apb_wr(0x1115f,0x2f4);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x3, ANIB=0
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=0
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=0
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x55,0x344);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x3, ANIB=1
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=1
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=1
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x1055,0x344);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x3, ANIB=2
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=2
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=2
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x2055,0x344);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x3, ANIB=3
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=3
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=3
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x3055,0x344);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x0, ANIB=4
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=4
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=4
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x4055,0x44);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x0, ANIB=5
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=5
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=5
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x5055,0x44);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x3, ANIB=6
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=6
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=6
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x6055,0x344);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x3, ANIB=7
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=7
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=7
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x7055,0x344);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x3, ANIB=8
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=8
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=8
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x8055,0x344);
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreDrvMode to 0x3, ANIB=9
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreP to 0x4, ANIB=9
+// // [phyinit_C_initPhyConfig] Programming ATxSlewRate::ATxPreN to 0x4, ANIB=9
+// // [phyinit_C_initPhyConfig] ### NOTE ### Optimal setting for ATxSlewRate::ATxPreP and ATxSlewRate::ATxPreP are technology specific.
+// // [phyinit_C_initPhyConfig] ### NOTE ### Please consult the "Output Slew Rate" section of HSpice Model App Note in specific technology for recommended settings
+
+dwc_ddrphy_apb_wr(0x9055,0x344);
+dwc_ddrphy_apb_wr(0x200c5,0x19);
+// // [phyinit_C_initPhyConfig] Pstate=0,  Memclk=1333MHz, Programming PllCtrl2 to 19 based on DfiClk frequency = 666.
+//
+// //##############################################################
+// //
+// // Program ARdPtrInitVal based on Frequency and PLL Bypass inputs
+// // The values programmed here assume ideal properties of DfiClk
+// // and Pclk including:
+// // - DfiClk skew
+// // - DfiClk jitter
+// // - DfiClk PVT variations
+// // - Pclk skew
+// // - Pclk jitter
+// //
+// // PLL Bypassed mode:
+// //     For MemClk frequency > 933MHz, the valid range of ARdPtrInitVal_p0[3:0] is: 2-5
+// //     For MemClk frequency < 933MHz, the valid range of ARdPtrInitVal_p0[3:0] is: 1-5
+// //
+// // PLL Enabled mode:
+// //     For MemClk frequency > 933MHz, the valid range of ARdPtrInitVal_p0[3:0] is: 1-5
+// //     For MemClk frequency < 933MHz, the valid range of ARdPtrInitVal_p0[3:0] is: 0-5
+// //
+// //##############################################################
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming ARdPtrInitVal to 0x2
+dwc_ddrphy_apb_wr(0x2002e,0x2);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DqsPreambleControl::TwoTckRxDqsPre to 0x1
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DqsPreambleControl::TwoTckTxDqsPre to 0x0
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DqsPreambleControl::PositionDfeInit to 0x2
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DqsPreambleControl::LP4TglTwoTckTxDqsPre to 0x0
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DqsPreambleControl::LP4PostambleExt to 0x0
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DqsPreambleControl::LP4SttcPreBridgeRxEn to 0x0
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DqsPreambleControl to 0x9
+dwc_ddrphy_apb_wr(0x20024,0x9);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DbyteDllModeCntrl to 0x2
+dwc_ddrphy_apb_wr(0x2003a,0x2);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DllLockParam to 0x212
+dwc_ddrphy_apb_wr(0x2007d,0x212);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DllGainCtl to 0x61
+dwc_ddrphy_apb_wr(0x2007c,0x61);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming ProcOdtTimeCtl to 0x3
+dwc_ddrphy_apb_wr(0x20056,0x3);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming TxOdtDrvStren::ODTStrenP to 0x18
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming TxOdtDrvStren::ODTStrenN to 0x0
+dwc_ddrphy_apb_wr(0x1004d,0x18);
+dwc_ddrphy_apb_wr(0x1014d,0x18);
+dwc_ddrphy_apb_wr(0x1104d,0x18);
+dwc_ddrphy_apb_wr(0x1114d,0x18);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming TxImpedanceCtrl1::DrvStrenFSDqP to 0x19
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming TxImpedanceCtrl1::DrvStrenFSDqN to 0x19
+dwc_ddrphy_apb_wr(0x10049,0x659);
+dwc_ddrphy_apb_wr(0x10149,0x659);
+dwc_ddrphy_apb_wr(0x11049,0x659);
+dwc_ddrphy_apb_wr(0x11149,0x659);
+// // [phyinit_C_initPhyConfig] Programming ATxImpedance::ADrvStrenP to 0x7
+// // [phyinit_C_initPhyConfig] Programming ATxImpedance::ADrvStrenN to 0x7
+dwc_ddrphy_apb_wr(0x43,0xe7);
+dwc_ddrphy_apb_wr(0x1043,0xe7);
+dwc_ddrphy_apb_wr(0x2043,0xe7);
+dwc_ddrphy_apb_wr(0x3043,0xe7);
+dwc_ddrphy_apb_wr(0x4043,0xe7);
+dwc_ddrphy_apb_wr(0x5043,0xe7);
+dwc_ddrphy_apb_wr(0x6043,0xe7);
+dwc_ddrphy_apb_wr(0x7043,0xe7);
+dwc_ddrphy_apb_wr(0x8043,0xe7);
+dwc_ddrphy_apb_wr(0x9043,0xe7);
+// // [phyinit_C_initPhyConfig] Programming DfiMode to 0x5
+dwc_ddrphy_apb_wr(0x20018,0x5);
+// // [phyinit_C_initPhyConfig] Programming DfiCAMode to 0x2
+dwc_ddrphy_apb_wr(0x20075,0x2);
+// // [phyinit_C_initPhyConfig] Programming CalDrvStr0::CalDrvStrPd50 to 0x0
+// // [phyinit_C_initPhyConfig] Programming CalDrvStr0::CalDrvStrPu50 to 0x0
+dwc_ddrphy_apb_wr(0x20050,0x0);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming CalUclkInfo::CalUClkTicksPer1uS to 0x29b
+dwc_ddrphy_apb_wr(0x20008,0x29b);
+// // [phyinit_C_initPhyConfig] Programming CalRate::CalInterval to 0x9
+// // [phyinit_C_initPhyConfig] Programming CalRate::CalOnce to 0x0
+dwc_ddrphy_apb_wr(0x20088,0x9);
+// // [phyinit_C_initPhyConfig] Pstate=0, Programming VrefInGlobal::GlobalVrefInSel to 0x0
+// // [phyinit_C_initPhyConfig] Pstate=0, Programming VrefInGlobal::GlobalVrefInDAC to 0x47
+// // [phyinit_C_initPhyConfig] Pstate=0, Programming VrefInGlobal to 0x238
+dwc_ddrphy_apb_wr(0x200b2,0x238);
+// // [phyinit_C_initPhyConfig] Pstate=0, Programming DqDqsRcvCntrl::MajorModeDbyte to 0x3
+// // [phyinit_C_initPhyConfig] Pstate=0, Programming DqDqsRcvCntrl to 0x5b1
+dwc_ddrphy_apb_wr(0x10043,0x5b1);
+dwc_ddrphy_apb_wr(0x10143,0x5b1);
+dwc_ddrphy_apb_wr(0x11043,0x5b1);
+dwc_ddrphy_apb_wr(0x11143,0x5b1);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DfiFreqRatio_p0 to 0x1
+dwc_ddrphy_apb_wr(0x200fa,0x1);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming TristateModeCA::DisDynAdrTri_p0 to 0x0
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming TristateModeCA::DDR2TMode_p0 to 0x0
+dwc_ddrphy_apb_wr(0x20019,0x4);
+// // [phyinit_C_initPhyConfig] Programming DfiFreqXlat*
+dwc_ddrphy_apb_wr(0x200f0,0x5555);
+dwc_ddrphy_apb_wr(0x200f1,0x5555);
+dwc_ddrphy_apb_wr(0x200f2,0x5555);
+dwc_ddrphy_apb_wr(0x200f3,0x5555);
+dwc_ddrphy_apb_wr(0x200f4,0x5555);
+dwc_ddrphy_apb_wr(0x200f5,0x5555);
+dwc_ddrphy_apb_wr(0x200f6,0x5555);
+dwc_ddrphy_apb_wr(0x200f7,0xf000);
+// // [phyinit_C_initPhyConfig] Disabling Lane 8 Receiver to save power.0
+dwc_ddrphy_apb_wr(0x1004a,0x500);
+// // [phyinit_C_initPhyConfig] Disabling Lane 8 Receiver to save power.1
+dwc_ddrphy_apb_wr(0x1104a,0x500);
+// // [phyinit_C_initPhyConfig] Programming MasterX4Config::X4TG to 0x0
+dwc_ddrphy_apb_wr(0x20025,0x0);
+// // [phyinit_C_initPhyConfig] Pstate=0, Memclk=1333MHz, Programming DMIPinPresent::RdDbiEnabled to 0x0
+dwc_ddrphy_apb_wr(0x2002d,0x0);
+dwc_ddrphy_apb_wr(0x2002c,0x0);
+// // [phyinit_C_initPhyConfig] End of dwc_ddrphy_phyinit_C_initPhyConfig()
+//
+//
+// //##############################################################
+// //
+// // dwc_ddrphy_phyihunit_userCustom_customPreTrain is a user-editable function.
+// //
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+// // [phyinit_userCustom_customPreTrain] Start of dwc_ddrphy_phyinit_userCustom_customPreTrain()
+ // //##############################################################
+// Add by dz.he for real chip begin
+
+dwc_ddrphy_apb_wr(0xd0000,0x0000);
+
+// For PLL
+dwc_ddrphy_apb_wr(0x200c7, 0x20);  //PllCtrl1
+dwc_ddrphy_apb_wr(0x200ca, 0x0124);  // PllTestMode
+dwc_ddrphy_apb_wr(0x200cc, 0x017f);  //PllCtrl4
+
+
+// DQ swap for DDR4
+//dwc_ddrphy_apb_wr(0x100a0, 0x0);
+//dwc_ddrphy_apb_wr(0x100a1, 0x7);
+//dwc_ddrphy_apb_wr(0x100a2, 0x1);
+//dwc_ddrphy_apb_wr(0x100a3, 0x6);
+//dwc_ddrphy_apb_wr(0x100a4, 0x2);
+//dwc_ddrphy_apb_wr(0x100a5, 0x5);
+//dwc_ddrphy_apb_wr(0x100a6, 0x3);
+//dwc_ddrphy_apb_wr(0x100a7, 0x4);
+//
+//dwc_ddrphy_apb_wr(0x110a0, 0x7);
+//dwc_ddrphy_apb_wr(0x110a1, 0x1);
+//dwc_ddrphy_apb_wr(0x110a2, 0x6);
+//dwc_ddrphy_apb_wr(0x110a3, 0x0);
+//dwc_ddrphy_apb_wr(0x110a4, 0x5);
+//dwc_ddrphy_apb_wr(0x110a5, 0x2);
+//dwc_ddrphy_apb_wr(0x110a6, 0x4);
+//dwc_ddrphy_apb_wr(0x110a7, 0x3);
+//
+//dwc_ddrphy_apb_wr(0x120a0, 0x7);
+//dwc_ddrphy_apb_wr(0x120a1, 0x0);
+//dwc_ddrphy_apb_wr(0x120a2, 0x6);
+//dwc_ddrphy_apb_wr(0x120a3, 0x1);
+//dwc_ddrphy_apb_wr(0x120a4, 0x5);
+//dwc_ddrphy_apb_wr(0x120a5, 0x2);
+//dwc_ddrphy_apb_wr(0x120a6, 0x4);
+//dwc_ddrphy_apb_wr(0x120a7, 0x3);
+//
+//dwc_ddrphy_apb_wr(0x130a0, 0x0);
+//dwc_ddrphy_apb_wr(0x130a1, 0x6);
+//dwc_ddrphy_apb_wr(0x130a2, 0x1);
+//dwc_ddrphy_apb_wr(0x130a3, 0x7);
+//dwc_ddrphy_apb_wr(0x130a4, 0x2);
+//dwc_ddrphy_apb_wr(0x130a5, 0x5);
+//dwc_ddrphy_apb_wr(0x130a6, 0x3);
+//dwc_ddrphy_apb_wr(0x130a7, 0x4);
+//
+//dwc_ddrphy_apb_wr(0xd0000,0x0001);
+
+// Add by dz.he for real chip end
+
+
+
+// // [phyinit_userCustom_customPreTrain] End of dwc_ddrphy_phyinit_userCustom_customPreTrain()
+// // [dwc_ddrphy_phyinit_D_loadIMEM, 1D] Start of dwc_ddrphy_phyinit_D_loadIMEM (Train2D=0)
+//
+//
+// //##############################################################
+// //
+// // (D) Load the 1D IMEM image
+// //
+// // This function loads the training firmware IMEM image into the SRAM.
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+//
+// // [dwc_ddrphy_phyinit_D_loadIMEM, 1D] Programming MemResetL to 0x2
+dwc_ddrphy_apb_wr(0x20060,0x2);
+// [dwc_ddrphy_phyinit_storeIncvFile] Reading input file: /eda/synopsys/DesignWare/dwc_lpddr4_multiphy_v2_tsmc12ffc18_C3/2.70a/firmware/A-2020.06-SP1/ddr4/ddr4_pmu_train_imem.incv
+
+// // 1.	Enable access to the internal CSRs by setting the MicroContMuxSel CSR to 0.
+// //       This allows the memory controller unrestricted access to the configuration CSRs.
+dwc_ddrphy_apb_wr(0xd0000,0x0);
+// // [dwc_ddrphy_phyinit_WriteOutMem] STARTING. offset 0x50000 size 0x4000
+
+CSTAMP(0xDADADA00);
+#ifdef NO_QUICK_SIM
+CSTAMP(0xDADADA01);
+dwc_ddrphy_phyinit_D_loadIMEM (0);
+#endif
+
+CSTAMP(0xDADADA02);
+
+
+// // [dwc_ddrphy_phyinit_WriteOutMem] DONE.  Index 0x4000
+// // 2.	Isolate the APB access from the internal CSRs by setting the MicroContMuxSel CSR to 1.
+// //      This allows the firmware unrestricted access to the configuration CSRs.
+dwc_ddrphy_apb_wr(0xd0000,0x1);
+// // [dwc_ddrphy_phyinit_D_loadIMEM, 1D] End of dwc_ddrphy_phyinit_D_loadIMEM()
+//
+//
+// //##############################################################
+// //
+// // Step (E) Set the PHY input clocks to the desired frequency for pstate 0
+// //
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+dwc_ddrphy_phyinit_userCustom_E_setDfiClk (0);
+
+//
+// // [dwc_ddrphy_phyinit_userCustom_E_setDfiClk] End of dwc_ddrphy_phyinit_userCustom_E_setDfiClk()
+// // [phyinit_F_loadDMEM, 1D] Start of dwc_ddrphy_phyinit_F_loadDMEM (pstate=0, Train2D=0)
+//
+//
+// //##############################################################
+// //
+// // (F) Load the 1D DMEM image and write the 1D Message Block parameters for the training firmware
+// //
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+// [dwc_ddrphy_phyinit_storeIncvFile] Reading input file: /eda/synopsys/DesignWare/dwc_lpddr4_multiphy_v2_tsmc12ffc18_C3/2.70a/firmware/A-2020.06-SP1/ddr4/ddr4_pmu_train_dmem.incv
+
+// // 1.	Enable access to the internal CSRs by setting the MicroContMuxSel CSR to 0.
+// //       This allows the memory controller unrestricted access to the configuration CSRs.
+dwc_ddrphy_apb_wr(0xd0000,0x0);
+// // [dwc_ddrphy_phyinit_WriteOutMem] STARTING. offset 0x54000 size 0x366
+
+CSTAMP(0xDADADA03);
+#ifdef NO_QUICK_SIM
+dwc_ddrphy_phyinit_F_loadDMEM (0,0);
+
+
+CSTAMP(0xDADADA04);
+dwc_ddrphy_apb_wr(0xd0000,0x0);
+
+dwc_ddrphy_apb_wr(0x54000,0x0);
+dwc_ddrphy_apb_wr(0x54001,0x0);
+dwc_ddrphy_apb_wr(0x54002,0x0);
+dwc_ddrphy_apb_wr(0x54003,0xa6a);
+dwc_ddrphy_apb_wr(0x54004,0x2);
+dwc_ddrphy_apb_wr(0x54005,0x0);
+dwc_ddrphy_apb_wr(0x54006,0x25a);
+dwc_ddrphy_apb_wr(0x54007,0x1000);
+dwc_ddrphy_apb_wr(0x54008,0x101);
+dwc_ddrphy_apb_wr(0x54009,0x0);
+dwc_ddrphy_apb_wr(0x5400a,0x0);
+dwc_ddrphy_apb_wr(0x5400b,0x31f);
+dwc_ddrphy_apb_wr(0x5400c,0x4);
+dwc_ddrphy_apb_wr(0x5400d,0x100);
+dwc_ddrphy_apb_wr(0x5400e,0x0);
+dwc_ddrphy_apb_wr(0x5400f,0x0);
+dwc_ddrphy_apb_wr(0x54010,0x0);
+dwc_ddrphy_apb_wr(0x54011,0x0);
+dwc_ddrphy_apb_wr(0x54012,0x1);
+dwc_ddrphy_apb_wr(0x54013,0x0);
+dwc_ddrphy_apb_wr(0x54014,0x0);
+dwc_ddrphy_apb_wr(0x54015,0x0);
+dwc_ddrphy_apb_wr(0x54016,0x0);
+dwc_ddrphy_apb_wr(0x54017,0x0);
+dwc_ddrphy_apb_wr(0x54018,0x0);
+dwc_ddrphy_apb_wr(0x54019,0x0);
+dwc_ddrphy_apb_wr(0x5401a,0x0);
+dwc_ddrphy_apb_wr(0x5401b,0x0);
+dwc_ddrphy_apb_wr(0x5401c,0x0);
+dwc_ddrphy_apb_wr(0x5401d,0x0);
+dwc_ddrphy_apb_wr(0x5401e,0x0);
+dwc_ddrphy_apb_wr(0x5401f,0x0);
+dwc_ddrphy_apb_wr(0x54020,0x0);
+dwc_ddrphy_apb_wr(0x54021,0x0);
+dwc_ddrphy_apb_wr(0x54022,0x0);
+dwc_ddrphy_apb_wr(0x54023,0x0);
+dwc_ddrphy_apb_wr(0x54024,0x0);
+dwc_ddrphy_apb_wr(0x54025,0x0);
+dwc_ddrphy_apb_wr(0x54026,0x0);
+dwc_ddrphy_apb_wr(0x54027,0x0);
+dwc_ddrphy_apb_wr(0x54028,0x0);
+dwc_ddrphy_apb_wr(0x54029,0x0);
+dwc_ddrphy_apb_wr(0x5402a,0x0);
+dwc_ddrphy_apb_wr(0x5402b,0x0);
+dwc_ddrphy_apb_wr(0x5402c,0x0);
+dwc_ddrphy_apb_wr(0x5402d,0x0);
+dwc_ddrphy_apb_wr(0x5402e,0x0);
+dwc_ddrphy_apb_wr(0x5402f,0xb44);
+dwc_ddrphy_apb_wr(0x54030,0x503);
+dwc_ddrphy_apb_wr(0x54031,0x20);
+dwc_ddrphy_apb_wr(0x54032,0x200);
+dwc_ddrphy_apb_wr(0x54033,0x800);
+dwc_ddrphy_apb_wr(0x54034,0x140);
+dwc_ddrphy_apb_wr(0x54035,0x1017);
+dwc_ddrphy_apb_wr(0x54036,0x101);
+dwc_ddrphy_apb_wr(0x54037,0x0);
+dwc_ddrphy_apb_wr(0x54038,0x0);
+dwc_ddrphy_apb_wr(0x54039,0x0);
+dwc_ddrphy_apb_wr(0x5403a,0x0);
+dwc_ddrphy_apb_wr(0x5403b,0x0);
+dwc_ddrphy_apb_wr(0x5403c,0x0);
+dwc_ddrphy_apb_wr(0x5403d,0x0);
+dwc_ddrphy_apb_wr(0x5403e,0x0);
+dwc_ddrphy_apb_wr(0x5403f,0x1221);
+// // [dwc_ddrphy_phyinit_WriteOutMem] DONE.  Index 0x366
+
+#endif
+CSTAMP(0xDADADA05);
+
+// // 2.	Isolate the APB access from the internal CSRs by setting the MicroContMuxSel CSR to 1.
+// //      This allows the firmware unrestricted access to the configuration CSRs.
+dwc_ddrphy_apb_wr(0xd0000,0x1);
+// // [phyinit_F_loadDMEM, 1D] End of dwc_ddrphy_phyinit_F_loadDMEM()
+//
+//
+// //##############################################################
+// //
+// // (G) Execute the Training Firmware
+// //
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+//
+// // 1.  Reset the firmware microcontroller by writing the MicroReset CSR to set the StallToMicro and
+// //     ResetToMicro fields to 1 (all other fields should be zero).
+// //     Then rewrite the CSR so that only the StallToMicro remains set (all other fields should be zero).
+dwc_ddrphy_apb_wr(0xd0000,0x1);
+dwc_ddrphy_apb_wr(0xd0099,0x9);
+dwc_ddrphy_apb_wr(0xd0099,0x1);
+//
+// // 2. Begin execution of the training firmware by setting the MicroReset CSR to 4'b0000.
+dwc_ddrphy_apb_wr(0xd0099,0x0);
+//
+// // 3.   Wait for the training firmware to complete by following the procedure in "uCtrl Initialization and Mailbox Messaging"
+// // [dwc_ddrphy_phyinit_userCustom_G_waitFwDone] Wait for the training firmware to complete.  Implement timeout fucntion or follow the procedure in "3.4 Running the firmware" of the Training Firmware Application Note to poll the Mailbox message.
+dwc_ddrphy_phyinit_userCustom_G_waitFwDone ();
+
+// // [dwc_ddrphy_phyinit_userCustom_G_waitFwDone] End of dwc_ddrphy_phyinit_userCustom_G_waitFwDone()
+// // 4.   Halt the microcontroller."
+dwc_ddrphy_apb_wr(0xd0099,0x1);
+// // [dwc_ddrphy_phyinit_G_execFW] End of dwc_ddrphy_phyinit_G_execFW ()
+//
+//
+// //##############################################################
+// //
+// // (H) Read the Message Block results
+// //
+// // The procedure is as follows:
+// //
+// //##############################################################
+//
+//
+// // 1.	Enable access to the internal CSRs by setting the MicroContMuxSel CSR to 0.
+dwc_ddrphy_apb_wr(0xd0000,0x0);
+//
+// 2. Read the Firmware Message Block to obtain the results from the training.
+// This can be accomplished by issuing APB read commands to the DMEM addresses.
+// Example:
+// if (Train2D)
+// {
+//   _read_2d_message_block_outputs_
+// }
+// else
+// {
+//   _read_1d_message_block_outputs_
+// }
+dwc_ddrphy_phyinit_userCustom_H_readMsgBlock (0);
+
+// [dwc_ddrphy_phyinit_userCustom_H_readMsgBlock] End of dwc_ddrphy_phyinit_userCustom_H_readMsgBlock ()
+// // 3.	Isolate the APB access from the internal CSRs by setting the MicroContMuxSel CSR to 1.
+dwc_ddrphy_apb_wr(0xd0000,0x1);
+// // 4.	If training is required at another frequency, repeat the operations starting at step (E).
+// // [dwc_ddrphy_phyinit_H_readMsgBlock] End of dwc_ddrphy_phyinit_H_readMsgBlock()
+//
+//
+// //##############################################################
+// //
+// // Step (E) Set the PHY input clocks to the desired frequency for pstate 0
+// //
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+dwc_ddrphy_phyinit_userCustom_E_setDfiClk (0);
+
+//
+// // [dwc_ddrphy_phyinit_userCustom_E_setDfiClk] End of dwc_ddrphy_phyinit_userCustom_E_setDfiClk()
+// // [dwc_ddrphy_phyinit_D_loadIMEM, 2D] Start of dwc_ddrphy_phyinit_D_loadIMEM (Train2D=1)
+//
+//
+// //##############################################################
+// //
+// // (D) Load the 2D IMEM image
+// //
+// // This function loads the training firmware IMEM image into the SRAM.
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+//
+// [dwc_ddrphy_phyinit_storeIncvFile] Reading input file: /eda/synopsys/DesignWare/dwc_lpddr4_multiphy_v2_tsmc12ffc18_C3/2.70a/firmware/A-2020.06-SP1/ddr4_2d/ddr4_2d_pmu_train_imem.incv
+
+// // 1.	Enable access to the internal CSRs by setting the MicroContMuxSel CSR to 0.
+// //       This allows the memory controller unrestricted access to the configuration CSRs.
+dwc_ddrphy_apb_wr(0xd0000,0x0);
+// // [dwc_ddrphy_phyinit_WriteOutMem] STARTING. offset 0x50000 size 0x4000
+
+CSTAMP(0xDADADA10);
+#ifdef NO_QUICK_SIM
+CSTAMP(0xDADADA11);
+dwc_ddrphy_phyinit_D_loadIMEM (1);
+#endif
+
+CSTAMP(0xDADADA12);
+
+
+// // [dwc_ddrphy_phyinit_WriteOutMem] DONE.  Index 0x4000
+// // 2.	Isolate the APB access from the internal CSRs by setting the MicroContMuxSel CSR to 1.
+// //      This allows the firmware unrestricted access to the configuration CSRs.
+dwc_ddrphy_apb_wr(0xd0000,0x1);
+// // [dwc_ddrphy_phyinit_D_loadIMEM, 2D] End of dwc_ddrphy_phyinit_D_loadIMEM()
+// // [phyinit_F_loadDMEM, 2D] Start of dwc_ddrphy_phyinit_F_loadDMEM (pstate=0, Train2D=1)
+//
+//
+// //##############################################################
+// //
+// // (F) Load the 2D DMEM image and write the 2D Message Block parameters for the training firmware
+// //
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+// [dwc_ddrphy_phyinit_storeIncvFile] Reading input file: /eda/synopsys/DesignWare/dwc_lpddr4_multiphy_v2_tsmc12ffc18_C3/2.70a/firmware/A-2020.06-SP1/ddr4_2d/ddr4_2d_pmu_train_dmem.incv
+
+// // 1.	Enable access to the internal CSRs by setting the MicroContMuxSel CSR to 0.
+// //       This allows the memory controller unrestricted access to the configuration CSRs.
+dwc_ddrphy_apb_wr(0xd0000,0x0);
+// // [dwc_ddrphy_phyinit_WriteOutMem] STARTING. offset 0x54000 size 0x2e2
+
+CSTAMP(0xDADADA13);
+#ifdef NO_QUICK_SIM
+dwc_ddrphy_phyinit_F_loadDMEM (0,1);
+
+
+CSTAMP(0xDADADA14);
+dwc_ddrphy_apb_wr(0xd0000,0x0);
+
+dwc_ddrphy_apb_wr(0x54000,0x0);
+dwc_ddrphy_apb_wr(0x54001,0x0);
+dwc_ddrphy_apb_wr(0x54002,0x0);
+dwc_ddrphy_apb_wr(0x54003,0xa6a);
+dwc_ddrphy_apb_wr(0x54004,0x2);
+dwc_ddrphy_apb_wr(0x54005,0x0);
+dwc_ddrphy_apb_wr(0x54006,0x25a);
+dwc_ddrphy_apb_wr(0x54007,0x1000);
+dwc_ddrphy_apb_wr(0x54008,0x101);
+dwc_ddrphy_apb_wr(0x54009,0x0);
+dwc_ddrphy_apb_wr(0x5400a,0x0);
+dwc_ddrphy_apb_wr(0x5400b,0x61);
+dwc_ddrphy_apb_wr(0x5400c,0x4);
+dwc_ddrphy_apb_wr(0x5400d,0x100);
+dwc_ddrphy_apb_wr(0x5400e,0x8020);
+dwc_ddrphy_apb_wr(0x5400f,0x0);
+dwc_ddrphy_apb_wr(0x54010,0x0);
+dwc_ddrphy_apb_wr(0x54011,0x0);
+dwc_ddrphy_apb_wr(0x54012,0x1);
+dwc_ddrphy_apb_wr(0x54013,0x0);
+dwc_ddrphy_apb_wr(0x54014,0x0);
+dwc_ddrphy_apb_wr(0x54015,0x0);
+dwc_ddrphy_apb_wr(0x54016,0x0);
+dwc_ddrphy_apb_wr(0x54017,0x0);
+dwc_ddrphy_apb_wr(0x54018,0x0);
+dwc_ddrphy_apb_wr(0x54019,0x0);
+dwc_ddrphy_apb_wr(0x5401a,0x0);
+dwc_ddrphy_apb_wr(0x5401b,0x0);
+dwc_ddrphy_apb_wr(0x5401c,0x0);
+dwc_ddrphy_apb_wr(0x5401d,0x0);
+dwc_ddrphy_apb_wr(0x5401e,0x0);
+dwc_ddrphy_apb_wr(0x5401f,0x0);
+dwc_ddrphy_apb_wr(0x54020,0x0);
+dwc_ddrphy_apb_wr(0x54021,0x0);
+dwc_ddrphy_apb_wr(0x54022,0x0);
+dwc_ddrphy_apb_wr(0x54023,0x0);
+dwc_ddrphy_apb_wr(0x54024,0x0);
+dwc_ddrphy_apb_wr(0x54025,0x0);
+dwc_ddrphy_apb_wr(0x54026,0x0);
+dwc_ddrphy_apb_wr(0x54027,0x0);
+dwc_ddrphy_apb_wr(0x54028,0x0);
+dwc_ddrphy_apb_wr(0x54029,0x0);
+dwc_ddrphy_apb_wr(0x5402a,0x0);
+dwc_ddrphy_apb_wr(0x5402b,0x0);
+dwc_ddrphy_apb_wr(0x5402c,0x0);
+dwc_ddrphy_apb_wr(0x5402d,0x0);
+dwc_ddrphy_apb_wr(0x5402e,0x0);
+dwc_ddrphy_apb_wr(0x5402f,0xb44);
+dwc_ddrphy_apb_wr(0x54030,0x503);
+dwc_ddrphy_apb_wr(0x54031,0x20);
+dwc_ddrphy_apb_wr(0x54032,0x200);
+dwc_ddrphy_apb_wr(0x54033,0x800);
+dwc_ddrphy_apb_wr(0x54034,0x140);
+dwc_ddrphy_apb_wr(0x54035,0x1017);
+dwc_ddrphy_apb_wr(0x54036,0x101);
+dwc_ddrphy_apb_wr(0x54037,0x0);
+dwc_ddrphy_apb_wr(0x54038,0x0);
+dwc_ddrphy_apb_wr(0x54039,0x0);
+dwc_ddrphy_apb_wr(0x5403a,0x0);
+dwc_ddrphy_apb_wr(0x5403b,0x0);
+dwc_ddrphy_apb_wr(0x5403c,0x0);
+dwc_ddrphy_apb_wr(0x5403d,0x0);
+dwc_ddrphy_apb_wr(0x5403e,0x0);
+dwc_ddrphy_apb_wr(0x5403f,0x1221);
+// // [dwc_ddrphy_phyinit_WriteOutMem] DONE.  Index 0x2e2
+
+#endif
+CSTAMP(0xDADADA15);
+
+// // 2.	Isolate the APB access from the internal CSRs by setting the MicroContMuxSel CSR to 1.
+// //      This allows the firmware unrestricted access to the configuration CSRs.
+dwc_ddrphy_apb_wr(0xd0000,0x1);
+// // [phyinit_F_loadDMEM, 2D] End of dwc_ddrphy_phyinit_F_loadDMEM()
+//
+//
+// //##############################################################
+// //
+// // (G) Execute the Training Firmware
+// //
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //##############################################################
+//
+//
+// // 1.  Reset the firmware microcontroller by writing the MicroReset CSR to set the StallToMicro and
+// //     ResetToMicro fields to 1 (all other fields should be zero).
+// //     Then rewrite the CSR so that only the StallToMicro remains set (all other fields should be zero).
+dwc_ddrphy_apb_wr(0xd0000,0x1);
+dwc_ddrphy_apb_wr(0xd0099,0x9);
+dwc_ddrphy_apb_wr(0xd0099,0x1);
+//
+// // 2. Begin execution of the training firmware by setting the MicroReset CSR to 4'b0000.
+dwc_ddrphy_apb_wr(0xd0099,0x0);
+//
+// // 3.   Wait for the training firmware to complete by following the procedure in "uCtrl Initialization and Mailbox Messaging"
+// // [dwc_ddrphy_phyinit_userCustom_G_waitFwDone] Wait for the training firmware to complete.  Implement timeout fucntion or follow the procedure in "3.4 Running the firmware" of the Training Firmware Application Note to poll the Mailbox message.
+dwc_ddrphy_phyinit_userCustom_G_waitFwDone ();
+
+// // [dwc_ddrphy_phyinit_userCustom_G_waitFwDone] End of dwc_ddrphy_phyinit_userCustom_G_waitFwDone()
+// // 4.   Halt the microcontroller."
+dwc_ddrphy_apb_wr(0xd0099,0x1);
+// // [dwc_ddrphy_phyinit_G_execFW] End of dwc_ddrphy_phyinit_G_execFW ()
+//
+//
+// //##############################################################
+// //
+// // (H) Read the Message Block results
+// //
+// // The procedure is as follows:
+// //
+// //##############################################################
+//
+//
+// // 1.	Enable access to the internal CSRs by setting the MicroContMuxSel CSR to 0.
+dwc_ddrphy_apb_wr(0xd0000,0x0);
+//
+// 2. Read the Firmware Message Block to obtain the results from the training.
+// This can be accomplished by issuing APB read commands to the DMEM addresses.
+// Example:
+// if (Train2D)
+// {
+//   _read_2d_message_block_outputs_
+// }
+// else
+// {
+//   _read_1d_message_block_outputs_
+// }
+dwc_ddrphy_phyinit_userCustom_H_readMsgBlock (1);
+
+// [dwc_ddrphy_phyinit_userCustom_H_readMsgBlock] End of dwc_ddrphy_phyinit_userCustom_H_readMsgBlock ()
+// // 3.	Isolate the APB access from the internal CSRs by setting the MicroContMuxSel CSR to 1.
+dwc_ddrphy_apb_wr(0xd0000,0x1);
+// // 4.	If training is required at another frequency, repeat the operations starting at step (E).
+// // [dwc_ddrphy_phyinit_H_readMsgBlock] End of dwc_ddrphy_phyinit_H_readMsgBlock()
+// // [phyinit_I_loadPIEImage] Start of dwc_ddrphy_phyinit_I_loadPIEImage()
+//
+//
+// //##############################################################
+// //
+// // (I) Load PHY Init Engine Image
+// //
+// // Load the PHY Initialization Engine memory with the provided initialization sequence.
+// // See PhyInit App Note for detailed description and function usage
+// //
+// //
+// //##############################################################
+//
+//
+// // Enable access to the internal CSRs by setting the MicroContMuxSel CSR to 0.
+// // This allows the memory controller unrestricted access to the configuration CSRs.
+dwc_ddrphy_apb_wr(0xd0000,0x0);
+// // [phyinit_I_loadPIEImage] Programming PIE Production Code
+// // [dwc_ddrphy_phyinit_LoadPieProdCode] Load PIE Production code: userInputBasic.DramDataWidth=16, userInputAdvanced.EnableHighClkSkewFix=0
+dwc_ddrphy_apb_wr(0x90000,0x10);
+dwc_ddrphy_apb_wr(0x90001,0x400);
+dwc_ddrphy_apb_wr(0x90002,0x10e);
+dwc_ddrphy_apb_wr(0x90003,0x0);
+dwc_ddrphy_apb_wr(0x90004,0x0);
+dwc_ddrphy_apb_wr(0x90005,0x8);
+dwc_ddrphy_apb_wr(0x90029,0xb);
+dwc_ddrphy_apb_wr(0x9002a,0x480);
+dwc_ddrphy_apb_wr(0x9002b,0x109);
+dwc_ddrphy_apb_wr(0x9002c,0x8);
+dwc_ddrphy_apb_wr(0x9002d,0x448);
+dwc_ddrphy_apb_wr(0x9002e,0x139);
+dwc_ddrphy_apb_wr(0x9002f,0x8);
+dwc_ddrphy_apb_wr(0x90030,0x478);
+dwc_ddrphy_apb_wr(0x90031,0x109);
+dwc_ddrphy_apb_wr(0x90032,0x2);
+dwc_ddrphy_apb_wr(0x90033,0x10);
+dwc_ddrphy_apb_wr(0x90034,0x139);
+dwc_ddrphy_apb_wr(0x90035,0xb);
+dwc_ddrphy_apb_wr(0x90036,0x7c0);
+dwc_ddrphy_apb_wr(0x90037,0x139);
+dwc_ddrphy_apb_wr(0x90038,0x44);
+dwc_ddrphy_apb_wr(0x90039,0x633);
+dwc_ddrphy_apb_wr(0x9003a,0x159);
+dwc_ddrphy_apb_wr(0x9003b,0x14f);
+dwc_ddrphy_apb_wr(0x9003c,0x630);
+dwc_ddrphy_apb_wr(0x9003d,0x159);
+dwc_ddrphy_apb_wr(0x9003e,0x47);
+dwc_ddrphy_apb_wr(0x9003f,0x633);
+dwc_ddrphy_apb_wr(0x90040,0x149);
+dwc_ddrphy_apb_wr(0x90041,0x4f);
+dwc_ddrphy_apb_wr(0x90042,0x633);
+dwc_ddrphy_apb_wr(0x90043,0x179);
+dwc_ddrphy_apb_wr(0x90044,0x8);
+dwc_ddrphy_apb_wr(0x90045,0xe0);
+dwc_ddrphy_apb_wr(0x90046,0x109);
+dwc_ddrphy_apb_wr(0x90047,0x0);
+dwc_ddrphy_apb_wr(0x90048,0x7c8);
+dwc_ddrphy_apb_wr(0x90049,0x109);
+dwc_ddrphy_apb_wr(0x9004a,0x0);
+dwc_ddrphy_apb_wr(0x9004b,0x1);
+dwc_ddrphy_apb_wr(0x9004c,0x8);
+dwc_ddrphy_apb_wr(0x9004d,0x0);
+dwc_ddrphy_apb_wr(0x9004e,0x45a);
+dwc_ddrphy_apb_wr(0x9004f,0x9);
+dwc_ddrphy_apb_wr(0x90050,0x0);
+dwc_ddrphy_apb_wr(0x90051,0x448);
+dwc_ddrphy_apb_wr(0x90052,0x109);
+dwc_ddrphy_apb_wr(0x90053,0x40);
+dwc_ddrphy_apb_wr(0x90054,0x633);
+dwc_ddrphy_apb_wr(0x90055,0x179);
+dwc_ddrphy_apb_wr(0x90056,0x1);
+dwc_ddrphy_apb_wr(0x90057,0x618);
+dwc_ddrphy_apb_wr(0x90058,0x109);
+dwc_ddrphy_apb_wr(0x90059,0x40c0);
+dwc_ddrphy_apb_wr(0x9005a,0x633);
+dwc_ddrphy_apb_wr(0x9005b,0x149);
+dwc_ddrphy_apb_wr(0x9005c,0x8);
+dwc_ddrphy_apb_wr(0x9005d,0x4);
+dwc_ddrphy_apb_wr(0x9005e,0x48);
+dwc_ddrphy_apb_wr(0x9005f,0x4040);
+dwc_ddrphy_apb_wr(0x90060,0x633);
+dwc_ddrphy_apb_wr(0x90061,0x149);
+dwc_ddrphy_apb_wr(0x90062,0x0);
+dwc_ddrphy_apb_wr(0x90063,0x4);
+dwc_ddrphy_apb_wr(0x90064,0x48);
+dwc_ddrphy_apb_wr(0x90065,0x40);
+dwc_ddrphy_apb_wr(0x90066,0x633);
+dwc_ddrphy_apb_wr(0x90067,0x149);
+dwc_ddrphy_apb_wr(0x90068,0x10);
+dwc_ddrphy_apb_wr(0x90069,0x4);
+dwc_ddrphy_apb_wr(0x9006a,0x18);
+dwc_ddrphy_apb_wr(0x9006b,0x0);
+dwc_ddrphy_apb_wr(0x9006c,0x4);
+dwc_ddrphy_apb_wr(0x9006d,0x78);
+dwc_ddrphy_apb_wr(0x9006e,0x549);
+dwc_ddrphy_apb_wr(0x9006f,0x633);
+dwc_ddrphy_apb_wr(0x90070,0x159);
+dwc_ddrphy_apb_wr(0x90071,0xd49);
+dwc_ddrphy_apb_wr(0x90072,0x633);
+dwc_ddrphy_apb_wr(0x90073,0x159);
+dwc_ddrphy_apb_wr(0x90074,0x94a);
+dwc_ddrphy_apb_wr(0x90075,0x633);
+dwc_ddrphy_apb_wr(0x90076,0x159);
+dwc_ddrphy_apb_wr(0x90077,0x441);
+dwc_ddrphy_apb_wr(0x90078,0x633);
+dwc_ddrphy_apb_wr(0x90079,0x149);
+dwc_ddrphy_apb_wr(0x9007a,0x42);
+dwc_ddrphy_apb_wr(0x9007b,0x633);
+dwc_ddrphy_apb_wr(0x9007c,0x149);
+dwc_ddrphy_apb_wr(0x9007d,0x1);
+dwc_ddrphy_apb_wr(0x9007e,0x633);
+dwc_ddrphy_apb_wr(0x9007f,0x149);
+dwc_ddrphy_apb_wr(0x90080,0x0);
+dwc_ddrphy_apb_wr(0x90081,0xe0);
+dwc_ddrphy_apb_wr(0x90082,0x109);
+dwc_ddrphy_apb_wr(0x90083,0xa);
+dwc_ddrphy_apb_wr(0x90084,0x10);
+dwc_ddrphy_apb_wr(0x90085,0x109);
+dwc_ddrphy_apb_wr(0x90086,0x9);
+dwc_ddrphy_apb_wr(0x90087,0x3c0);
+dwc_ddrphy_apb_wr(0x90088,0x149);
+dwc_ddrphy_apb_wr(0x90089,0x9);
+dwc_ddrphy_apb_wr(0x9008a,0x3c0);
+dwc_ddrphy_apb_wr(0x9008b,0x159);
+dwc_ddrphy_apb_wr(0x9008c,0x18);
+dwc_ddrphy_apb_wr(0x9008d,0x10);
+dwc_ddrphy_apb_wr(0x9008e,0x109);
+dwc_ddrphy_apb_wr(0x9008f,0x0);
+dwc_ddrphy_apb_wr(0x90090,0x3c0);
+dwc_ddrphy_apb_wr(0x90091,0x109);
+dwc_ddrphy_apb_wr(0x90092,0x18);
+dwc_ddrphy_apb_wr(0x90093,0x4);
+dwc_ddrphy_apb_wr(0x90094,0x48);
+dwc_ddrphy_apb_wr(0x90095,0x18);
+dwc_ddrphy_apb_wr(0x90096,0x4);
+dwc_ddrphy_apb_wr(0x90097,0x58);
+dwc_ddrphy_apb_wr(0x90098,0xb);
+dwc_ddrphy_apb_wr(0x90099,0x10);
+dwc_ddrphy_apb_wr(0x9009a,0x109);
+dwc_ddrphy_apb_wr(0x9009b,0x1);
+dwc_ddrphy_apb_wr(0x9009c,0x10);
+dwc_ddrphy_apb_wr(0x9009d,0x109);
+dwc_ddrphy_apb_wr(0x9009e,0x5);
+dwc_ddrphy_apb_wr(0x9009f,0x7c0);
+dwc_ddrphy_apb_wr(0x900a0,0x109);
+dwc_ddrphy_apb_wr(0x900a1,0x0);
+dwc_ddrphy_apb_wr(0x900a2,0x8140);
+dwc_ddrphy_apb_wr(0x900a3,0x10c);
+dwc_ddrphy_apb_wr(0x900a4,0x10);
+dwc_ddrphy_apb_wr(0x900a5,0x8138);
+dwc_ddrphy_apb_wr(0x900a6,0x104);
+dwc_ddrphy_apb_wr(0x900a7,0x8);
+dwc_ddrphy_apb_wr(0x900a8,0x448);
+dwc_ddrphy_apb_wr(0x900a9,0x109);
+dwc_ddrphy_apb_wr(0x900aa,0xf);
+dwc_ddrphy_apb_wr(0x900ab,0x7c0);
+dwc_ddrphy_apb_wr(0x900ac,0x109);
+dwc_ddrphy_apb_wr(0x900ad,0x47);
+dwc_ddrphy_apb_wr(0x900ae,0x630);
+dwc_ddrphy_apb_wr(0x900af,0x109);
+dwc_ddrphy_apb_wr(0x900b0,0x8);
+dwc_ddrphy_apb_wr(0x900b1,0x618);
+dwc_ddrphy_apb_wr(0x900b2,0x109);
+dwc_ddrphy_apb_wr(0x900b3,0x8);
+dwc_ddrphy_apb_wr(0x900b4,0xe0);
+dwc_ddrphy_apb_wr(0x900b5,0x109);
+dwc_ddrphy_apb_wr(0x900b6,0x0);
+dwc_ddrphy_apb_wr(0x900b7,0x7c8);
+dwc_ddrphy_apb_wr(0x900b8,0x109);
+dwc_ddrphy_apb_wr(0x900b9,0x8);
+dwc_ddrphy_apb_wr(0x900ba,0x8140);
+dwc_ddrphy_apb_wr(0x900bb,0x10c);
+dwc_ddrphy_apb_wr(0x900bc,0x0);
+dwc_ddrphy_apb_wr(0x900bd,0x478);
+dwc_ddrphy_apb_wr(0x900be,0x109);
+dwc_ddrphy_apb_wr(0x900bf,0x0);
+dwc_ddrphy_apb_wr(0x900c0,0x1);
+dwc_ddrphy_apb_wr(0x900c1,0x8);
+dwc_ddrphy_apb_wr(0x900c2,0x8);
+dwc_ddrphy_apb_wr(0x900c3,0x4);
+dwc_ddrphy_apb_wr(0x900c4,0x0);
+dwc_ddrphy_apb_wr(0x90006,0x8);
+dwc_ddrphy_apb_wr(0x90007,0x7c8);
+dwc_ddrphy_apb_wr(0x90008,0x109);
+dwc_ddrphy_apb_wr(0x90009,0x0);
+dwc_ddrphy_apb_wr(0x9000a,0x400);
+dwc_ddrphy_apb_wr(0x9000b,0x106);
+dwc_ddrphy_apb_wr(0xd00e7,0x400);
+dwc_ddrphy_apb_wr(0x90017,0x0);
+dwc_ddrphy_apb_wr(0x90026,0x2a);
+// // [phyinit_I_loadPIEImage] Pstate=0,  Memclk=1333MHz, Programming Seq0BDLY0 to 0x53
+dwc_ddrphy_apb_wr(0x2000b,0x53);
+// // [phyinit_I_loadPIEImage] Pstate=0,  Memclk=1333MHz, Programming Seq0BDLY1 to 0xa6
+dwc_ddrphy_apb_wr(0x2000c,0xa6);
+// // [phyinit_I_loadPIEImage] Pstate=0,  Memclk=1333MHz, Programming Seq0BDLY2 to 0x682
+dwc_ddrphy_apb_wr(0x2000d,0x682);
+// // [phyinit_I_loadPIEImage] Pstate=0,  Memclk=1333MHz, Programming Seq0BDLY3 to 0x2c
+dwc_ddrphy_apb_wr(0x2000e,0x2c);
+dwc_ddrphy_apb_wr(0x9000c,0x0);
+dwc_ddrphy_apb_wr(0x9000d,0x173);
+dwc_ddrphy_apb_wr(0x9000e,0x60);
+dwc_ddrphy_apb_wr(0x9000f,0x6110);
+dwc_ddrphy_apb_wr(0x90010,0x2152);
+dwc_ddrphy_apb_wr(0x90011,0xdfbd);
+dwc_ddrphy_apb_wr(0x90012,0xffff);
+dwc_ddrphy_apb_wr(0x90013,0x6152);
+// // [phyinit_I_loadPIEImage] Turn on calibration and hold idle until dfi_init_start is asserted sequence is triggered.
+dwc_ddrphy_apb_wr(0x20089,0x1);
+// // [phyinit_I_loadPIEImage] Programming CalRate::CalInterval to 0x9
+// // [phyinit_I_loadPIEImage] Programming CalRate::CalOnce to 0x0
+// // [phyinit_I_loadPIEImage] Programming CalRate::CalRun to 0x1
+dwc_ddrphy_apb_wr(0x20088,0x19);
+// // [phyinit_I_loadPIEImage] Disabling Ucclk (PMU) and Hclk (training hardware)
+dwc_ddrphy_apb_wr(0xc0080,0x0);
+// // [phyinit_I_loadPIEImage] Isolate the APB access from the internal CSRs by setting the MicroContMuxSel CSR to 1.
+dwc_ddrphy_apb_wr(0xd0000,0x1);
+// // [phyinit_I_loadPIEImage] End of dwc_ddrphy_phyinit_I_loadPIEImage()
+//
+//
+// //##############################################################
+// //
+// // dwc_ddrphy_phyinit_userCustom_customPostTrain is a user-editable function.
+// //
+// // See PhyInit App Note for detailed description and function usage
+//
+// //##############################################################
+//
+dwc_ddrphy_phyinit_userCustom_customPostTrain ();
+
+// // [dwc_ddrphy_phyinit_userCustom_customPostTrain] End of dwc_ddrphy_phyinit_userCustom_customPostTrain()
+// // [dwc_ddrphy_phyinit_userCustom_J_enterMissionMode] Start of dwc_ddrphy_phyinit_userCustom_J_enterMissionMode()
+//
+//
+// //##############################################################
+// //
+// // (J) Initialize the PHY to Mission Mode through DFI Initialization
+// //
+// // Initialize the PHY to mission mode as follows:
+// //
+// // 1. Set the PHY input clocks to the desired frequency.
+// // 2. Initialize the PHY to mission mode by performing DFI Initialization.
+// //    Please see the DFI specification for more information. See the DFI frequency bus encoding in section <XXX>.
+// // Note: The PHY training firmware initializes the DRAM state. if skip
+// // training is used, the DRAM state is not initialized.
+// //
+// //##############################################################
+//
+dwc_ddrphy_phyinit_userCustom_J_enterMissionMode ();
+
+//
+// // [dwc_ddrphy_phyinit_userCustom_J_enterMissionMode] End of dwc_ddrphy_phyinit_userCustom_J_enterMissionMode()
+// [dwc_ddrphy_phyinit_sequence] End of dwc_ddrphy_phyinit_sequence()
+// [dwc_ddrphy_phyinit_main] End of dwc_ddrphy_phyinit_main()

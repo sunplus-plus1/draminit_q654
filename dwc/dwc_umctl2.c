@@ -25,8 +25,13 @@ int dwc_umctl2_init_before_ctl_rst(void)
 {
 #ifdef DRAM_TYPE_LPDDR4
 #ifdef SDRAM_SPEED_1600
+#ifdef DRAM_X32
 	prn_string("dwc_umctl2_lpddr4_1600_SP7350_for_realchip\n");
 	#include <SP7350/LPDDR4/dwc_umctl2_lpddr4_1600_SP7350_for_realchip.txt>
+#elif defined(DRAM_X16)
+	prn_string("dwc_umctl2_lpddr4_1600_SP7350_for_realchip_x16\n");
+	#include <SP7350/LPDDR4/dwc_umctl2_lpddr4_1600_SP7350_for_realchip_x16.txt>
+#endif
 #endif
 
 #ifdef SDRAM_SPEED_1333
@@ -87,8 +92,13 @@ int dwc_umctl2_init_before_ctl_rst(void)
 #endif
 
 #ifdef SDRAM_SPEED_1333
+#ifdef DRAM_X32
 	prn_string("Q654_DDR4_ASIC_SDRAM_DATARATE_2666\n");
 	#include <SP7350/DDR4/Q654_DDR4_ASIC_SDRAM_DATARATE_2666.txt>
+#elif defined(DRAM_X16)
+	prn_string("Q654_DDR4_ASIC_SDRAM_DATARATE_2666_1GB\n");
+	#include <SP7350/DDR4/Q654_DDR4_ASIC_SDRAM_DATARATE_2666_1GB.txt>
+#endif
 #endif
 
 #ifdef SDRAM_SPEED_1066

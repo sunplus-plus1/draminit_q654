@@ -1078,8 +1078,13 @@ void dwc_ddrphy_phyinit_main(void)
 		prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_rank1\n");
 		#include <SP7350/LPDDR4/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_rank1.txt>
 	#else
+	#ifdef DRAM_X32
 		prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_3200_SP7350\n");
 		#include <SP7350/LPDDR4/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_3200_SP7350.txt>
+	#elif defined(DRAM_X16)
+		prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_3200_x16\n");
+		#include <SP7350/LPDDR4/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_3200_x16.txt>
+	#endif
 	#endif
 	#endif
 
@@ -1145,8 +1150,13 @@ void dwc_ddrphy_phyinit_main(void)
 	prn_string("dwc_ddrphy_phyinit_out_ddr4_2666_2133_1866_1600_train1d2d_rank1\n");
 	#include <SP7350/DDR4/dwc_ddrphy_phyinit_out_ddr4_2666_2133_1866_1600_train1d2d_rank1.txt>
 	#else
+	#ifdef DRAM_X32
 	prn_string("dwc_ddrphy_phyinit_out_ddr4_2666_train1d2d_rank1\n");
 	#include <SP7350/DDR4/dwc_ddrphy_phyinit_out_ddr4_2666_train1d2d_rank1.txt>
+	#elif defined(DRAM_X16)
+	prn_string("dwc_ddrphy_phyinit_out_ddr4_train1d2d_1GB\n");
+	#include <SP7350/DDR4/dwc_ddrphy_phyinit_out_ddr4_train1d2d_1GB.txt>
+	#endif
 	#endif
 	#endif
 
