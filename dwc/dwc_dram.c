@@ -14,6 +14,16 @@
 #include <fat/common.h>
 #include <fat/fat.h>
 
+#ifdef DRAM_TYPE_LPDDR4
+#include <SP7350/LPDDR4/dwc_retention_lpddr4_SP7350.txt>
+#endif
+#ifdef DRAM_TYPE_DDR4
+#include <SP7350/DDR4/dwc_retention_ddr4_SP7350.txt>
+#endif
+#ifdef DRAM_TYPE_DDR3
+#include <SP7350/DDR3/dwc_retention_ddr3_SP7350.txt>
+#endif
+
 #define SPI_FLASH_BASE      0xF0000000
 #define SPI_XBOOT_OFFSET    (96 * 1024)
 
@@ -995,75 +1005,37 @@ void dwc_ddrphy_phyinit_F_loadDMEM_of_SP(int pstate, int Train2D)
 	mp = 1;
 }
 
-void dwc_ddrphy_phyinit_saveRetention(void)
+#define CM4_SRAM_RET_ADDRESS    0xFA29F000 /* Save the configuration info of ddr */
+void ddr_retention_save_param(void)
 {
-	volatile unsigned int *addr;
-	unsigned int *beg  = (unsigned int *)ADDRESS_CONVERT(0xFA280000);
+	volatile UINT16 *addr;
+	unsigned int *beg  = (unsigned int *)ADDRESS_CONVERT(CM4_SRAM_RET_ADDRESS);
 	prn_string("save retention value: ");
-	prn_dword0((unsigned int)ADDRESS_CONVERT(0xFA280000));
-	prn_string(" - ");
-	prn_dword((unsigned int)ADDRESS_CONVERT(0xFA290000));
+	prn_dword0((unsigned int)ADDRESS_CONVERT(CM4_SRAM_RET_ADDRESS));
 
-	int regIndx=0;
+	// Enabling Ucclk (PMU)
+	dwc_ddrphy_apb_wr(0xd0000, 0x0);
+	dwc_ddrphy_apb_wr(0xc0080, 0x3);
+
+	// Save ddr phy registers to SRAM.
+	int i=0;
 	addr = beg;
-	for (regIndx = 0; regIndx < NumRegSaved; regIndx++)
+	for (i = 0; i < RET_CSRS_CNT; i++)
 	{
-		prn_string("regIndx: ");
-		prn_dword0(regIndx);
-		prn_string("; Address: ");
-		prn_dword0((unsigned int)RetRegList[regIndx].Address);
-		*addr = (unsigned int) RetRegList[regIndx].Address;
-		addr++;
-		prn_string("; Value: ");
-		prn_dword0(RetRegList[regIndx].Value);
-		prn_string("\n");
-		*addr = RetRegList[regIndx].Value;
+		*addr = DWC_PHY_REG(ret_ddrphy_addr[i]);
 		addr++;
 	}
+
+	// Disabling Ucclk (PMU)
+	dwc_ddrphy_apb_wr(0xc0080, 0x2);
+	dwc_ddrphy_apb_wr(0xd0000, 0x1);
 }
-
-void dwc_ddrphy_phyinit_restoreRetention(void)
-{
-	volatile unsigned int *addr;
-	unsigned int *beg  = (unsigned int *)ADDRESS_CONVERT(0xFA280000);
-	unsigned int phyadr, val;
-	prn_string("restore retention value: ");
-	prn_dword0((unsigned int)ADDRESS_CONVERT(0xFA280000));
-	prn_string(" - ");
-	prn_dword((unsigned int)ADDRESS_CONVERT(0xFA290000));
-
-	int regIndx=0;
-	addr = beg;
-
-	dwc_ddrphy_apb_wr(0xd0000, 0x00);
-	dwc_ddrphy_apb_wr(0xc0080, 0x03);
-	for (regIndx = 0; regIndx < NumRegSaved; regIndx++)
-	{
-	    phyadr = *addr;
-		prn_string("regIndx: ");
-		prn_dword0(regIndx);
-		prn_string("; Address: ");
-		prn_dword0(phyadr);
-		addr++;
-
-	    val = *addr;
-		prn_string("; Value: ");
-		prn_dword0(val);
-		prn_string("\n");
-		addr++;
-		dwc_ddrphy_apb_wr(phyadr, val);
-	}
-	dwc_ddrphy_apb_wr(0xc0080, 0x02);
-	dwc_ddrphy_apb_wr(0xd0000, 0x01);
-}
-
 
 void dwc_ddrphy_phyinit_main(void)
 {
 
-	prn_string("dwc_ddrphy_phyinit_main 20231212\n");
+	prn_string("dwc_ddrphy_phyinit_main 20240604\n");
 	mp = 1;
-
 	#ifdef LCDL_testing
 	dwc_ddrphy_LCDL_testing();
 	#endif
@@ -1203,6 +1175,7 @@ void dwc_ddrphy_phyinit_main(void)
 	#endif
 	#endif
 
+	ddr_retention_save_param();
 	#ifdef Diagnostic_test
 	dwc_ddrphy_phyinit_sequence (1, 1, 0);
 	#endif
@@ -1281,8 +1254,7 @@ int dram_init(unsigned int dram_id)
 		}
 
 		prn_string("dram_init_end\n");
-		//dwc_ddrphy_phyinit_saveRetention();
-		//dwc_ddrphy_phyinit_restoreRetention();
+
 		return SUCCESS;
 	} // end of for loop :: loop_time for initial & training time control
 
