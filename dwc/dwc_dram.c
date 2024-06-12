@@ -1008,8 +1008,7 @@ void dwc_ddrphy_phyinit_F_loadDMEM_of_SP(int pstate, int Train2D)
 #define CM4_SRAM_RET_ADDRESS    0xFA29F000 /* Save the configuration info of ddr */
 void ddr_retention_save_param(void)
 {
-	volatile UINT16 *addr;
-	unsigned int *beg  = (unsigned int *)ADDRESS_CONVERT(CM4_SRAM_RET_ADDRESS);
+	u16 *addr  = (u16 *)ADDRESS_CONVERT(CM4_SRAM_RET_ADDRESS);
 	prn_string("save retention value: ");
 	prn_dword0((unsigned int)ADDRESS_CONVERT(CM4_SRAM_RET_ADDRESS));
 
@@ -1019,7 +1018,6 @@ void ddr_retention_save_param(void)
 
 	// Save ddr phy registers to SRAM.
 	int i=0;
-	addr = beg;
 	for (i = 0; i < RET_CSRS_CNT; i++)
 	{
 		*addr = DWC_PHY_REG(ret_ddrphy_addr[i]);
