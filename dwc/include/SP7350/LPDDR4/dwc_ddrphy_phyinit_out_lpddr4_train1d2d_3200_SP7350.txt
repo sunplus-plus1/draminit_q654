@@ -824,7 +824,7 @@ dwc_ddrphy_phyinit_F_loadDMEM (0,0);
 CSTAMP(0xDADADA04);
 dwc_ddrphy_apb_wr(0xd0000,0x0);
 
-dwc_ddrphy_apb_wr(0x54000,0x0);
+dwc_ddrphy_apb_wr(0x54000,0x60);
 dwc_ddrphy_apb_wr(0x54001,0x0);
 dwc_ddrphy_apb_wr(0x54002,0x0);
 dwc_ddrphy_apb_wr(0x54003,0xc80);
@@ -1032,7 +1032,7 @@ dwc_ddrphy_phyinit_F_loadDMEM (0,1);
 CSTAMP(0xDADADA14);
 dwc_ddrphy_apb_wr(0xd0000,0x0);
 
-dwc_ddrphy_apb_wr(0x54000,0x0);
+dwc_ddrphy_apb_wr(0x54000,0x60);
 dwc_ddrphy_apb_wr(0x54001,0x0);
 dwc_ddrphy_apb_wr(0x54002,0x0);
 dwc_ddrphy_apb_wr(0x54003,0xc80);
