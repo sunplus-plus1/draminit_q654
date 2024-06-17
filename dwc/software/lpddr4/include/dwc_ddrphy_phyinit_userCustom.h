@@ -151,12 +151,12 @@ extern int ARdPtrInitVal[4];
  * amount of registered that can be saved. The user may increase this variable
  * as desired if a larger number of registers need to be restored.
 */
-#define MAX_NUM_RET_REGS 5000
+//#define MAX_NUM_RET_REGS 5000
 
 /**  Array of Address/value pairs used to store register values for the purpose
  * of retention restore.
  */
-Reg_Addr_Val_t RetRegList[MAX_NUM_RET_REGS];  
+//Reg_Addr_Val_t RetRegList[MAX_NUM_RET_REGS];  
 
 //-------------------------------------------------------------
 // Fixed Function prototypes

@@ -15,6 +15,21 @@
 #include <stdint.h>
 #include "dwc_ddrphy_phyinit.h"
 
+/*! \def MAX_NUM_RET_REGS
+ *  \brief default Max number of retention registers
+ *
+ * This define is only used by the PhyInit Register interface to define the max
+ * amount of registered that can be saved. The user may increase this variable
+ * as desired if a larger number of registers need to be restored.
+*/
+#define MAX_NUM_RET_REGS 5000
+
+/**  Array of Address/value pairs used to store register values for the purpose
+ * of retention restore.
+ */
+Reg_Addr_Val_t RetRegList[MAX_NUM_RET_REGS];  
+
+
 int NumRegSaved = 0;    ///< Current Number of registers saved.
 int TrackEn = 1;        ///< Enabled tracking of registers
 
