@@ -82,7 +82,7 @@ static volatile struct sp_registers_ao *sp_reg_ptr_AO = (volatile struct sp_regi
 #define SP_REG_AO(GROUP, OFFSET)	(sp_reg_ptr_AO->sp_register[GROUP][OFFSET])
 
 struct dwc_phy_regs {
-	UINT16 dwc_phy_reg[0x90200];	/* change the size here, (area >> 2) */
+	UINT16 dwc_phy_reg[0x100000];	/* change the size here, (area >> 2) */
 };
 static volatile struct dwc_phy_regs *dwc_phy_reg_ptr = (volatile struct dwc_phy_regs *)(DWC_PHY_REG_Base);
 #define DWC_PHY_REG(OFFSET)		(dwc_phy_reg_ptr->dwc_phy_reg[OFFSET ])
@@ -1032,7 +1032,7 @@ void ddr_retention_save_param(void)
 void dwc_ddrphy_phyinit_main(void)
 {
 
-	prn_string("dwc_ddrphy_phyinit_main 20240604\n");
+	prn_string("dwc_ddrphy_phyinit_main 20240701\n");
 	mp = 1;
 	#ifdef LCDL_testing
 	dwc_ddrphy_LCDL_testing();
