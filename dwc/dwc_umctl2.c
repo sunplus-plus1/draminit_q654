@@ -159,6 +159,8 @@ int dwc_umctl2_init_before_ctl_rst(void)
 	prn_string("MT41K512M16VRP, 1rank, FBGA=D9ZWN\n");
 #elif defined(K4B8G1646D)
 	prn_string("K4B8G1646D, SAMSUNG 512Mx16, 2rank\n");
+#elif defined(BWMZCX32H2A)
+	prn_string("BWMZCX32H2A, 1rank\n");
 #endif
 	return 0;
 }
@@ -531,7 +533,7 @@ int ctl_trigger_init_and_wait_normal()
 	//->TRIG_VIP_REFRESH_CHECK;
 
 	ctl_apb_wr(0x1b0,0x00000050);
-	#ifdef MT53E1G32D2_A
+	#if	defined(MT53E1G32D2_A) || defined(BWMZCX32H2A)
 	ctl_apb_wr(0x1b0,0x00000055); //trigger SDRAM initilaztion.
 	#else
 	ctl_apb_wr(0x1b0,0x00000051); //trigger SDRAM initilaztion.

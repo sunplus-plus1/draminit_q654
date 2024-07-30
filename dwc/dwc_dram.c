@@ -1044,7 +1044,7 @@ void dwc_ddrphy_phyinit_main(void)
 	#ifdef NT6AN1024F32AV
 		prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_3200_SP7350_nayna\n");
 		#include <SP7350/LPDDR4/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_3200_SP7350_nayna.txt>
-	#elif defined(MT53E1G32D2_A)
+	#elif defined(MT53E1G32D2_A) || defined(BWMZCX32H2A)
 		prn_string("dwc_ddrphy_phyinit_out_lpddr4_train1d2d_rank1\n");
 		#include <SP7350/LPDDR4/dwc_ddrphy_phyinit_out_lpddr4_train1d2d_rank1.txt>
 	#else
