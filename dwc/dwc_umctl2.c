@@ -175,31 +175,17 @@ int dwc_umctl2_init_after_ctl_rst(void)
 	#ifdef SDRAM_SPEED_1333
 	prn_string("SDRAM_SPEED_1333\n");
 	#endif
-	#ifdef PLATFORM_SP7350
-	ctl_apb_wr(0x0304,UMCTL2_304(UMCTL2_304_3));
+	ctl_apb_wr(0x0304,0x00000000);	
 	ctl_apb_rd(0x0030);//PWRCTL
-	ctl_apb_wr(0x0030,UMCTL2_30(UMCTL2_30_3));//PWRCTL
+	ctl_apb_wr(0x0030,0x00000120);//PWRCTL
 	ctl_apb_rd(0x0030);//PWRCTL
-	ctl_apb_wr(0x0030,UMCTL2_30(UMCTL2_30_3)); //PWRCTL
+	ctl_apb_wr(0x0030,0x00000120); //PWRCTL
 	ctl_apb_rd(0x01c4);//DFIPHYMSTR
-	ctl_apb_wr(0x01c4,UMCTL2_1C4(UMCTL2_1C4_2));//DFIPHYMSTR
-	ctl_apb_wr(0x0320,UMCTL2_320(UMCTL2_304_2));//SWCTL
-	ctl_apb_wr(0x01b0,UMCTL2_1B0(UMCTL2_1B0_2));//DFIMISC
-	ctl_apb_wr(0x01b0,UMCTL2_1B0(UMCTL2_1B0_2));//DFIMISC
-	ctl_apb_wr(0x0304,UMCTL2_304(UMCTL2_304_4));
-	#else
-	ctl_apb_wr(0x304, 0x00000000);
-	ctl_apb_rd(0x030);
-	ctl_apb_wr(0x030, 0x00000020);
-	ctl_apb_rd(0x030);
-	ctl_apb_wr(0x030, 0x00000020);
-	ctl_apb_rd(0x1c4);
-	ctl_apb_wr(0x1c4, 0x00000000);
-	ctl_apb_wr(0x320, 0x00000000);
-	ctl_apb_wr(0x1b0, 0x00000040);
-	ctl_apb_wr(0x1b0, 0x00000040);
-	ctl_apb_wr(0x304, 0x00000002);
-	#endif
+	ctl_apb_wr(0x01c4,0x00000000);//DFIPHYMSTR
+	ctl_apb_wr(0x0320,0x00000000);//SWCTL
+	ctl_apb_wr(0x01b0,0x00000050);//DFIMISC
+	ctl_apb_wr(0x01b0,0x00000050);//DFIMISC
+	ctl_apb_wr(0x0304,0x00000002);
 	ctl_apb_rd(0x00d0);//INIT0
 	ctl_apb_rd(0x01c0);//DBICTL 'h00000006
 	ctl_apb_rd(0x0000);//MSTR 'h80080020
