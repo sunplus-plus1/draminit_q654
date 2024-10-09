@@ -177,9 +177,9 @@ int dwc_umctl2_init_after_ctl_rst(void)
 	#endif
 	ctl_apb_wr(0x0304,0x00000000);	
 	ctl_apb_rd(0x0030);//PWRCTL
-	ctl_apb_wr(0x0030,0x00000120);//PWRCTL
+	ctl_apb_wr(0x0030,0x00000020);//PWRCTL
 	ctl_apb_rd(0x0030);//PWRCTL
-	ctl_apb_wr(0x0030,0x00000120); //PWRCTL
+	ctl_apb_wr(0x0030,0x00000020); //PWRCTL
 	ctl_apb_rd(0x01c4);//DFIPHYMSTR
 	ctl_apb_wr(0x01c4,0x00000000);//DFIPHYMSTR
 	ctl_apb_wr(0x0320,0x00000000);//SWCTL
