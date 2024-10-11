@@ -519,8 +519,8 @@ int ctl_trigger_init_and_wait_normal()
 	//->TRIG_VIP_REFRESH_CHECK;
 
 	ctl_apb_wr(0x1b0,0x00000050);
-	#if	defined(MT53E1G32D2_A) || defined(BWMZCX32H2A)
-	ctl_apb_wr(0x1b0,0x00000055); //trigger SDRAM initilaztion.
+	#ifdef DRAM_TYPE_LPDDR4
+    ctl_apb_wr(0x1b0,0x00000055); //trigger SDRAM initilaztion.
 	#else
 	ctl_apb_wr(0x1b0,0x00000051); //trigger SDRAM initilaztion.
 	#endif
