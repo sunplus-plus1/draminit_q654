@@ -367,7 +367,6 @@ int ctl_trigger_init_and_wait_normal()
 	ctl_apb_wr(0x1b0,0x00000051); //trigger SDRAM initilaztion.
 	#endif
 	ctl_apb_wr(0x030,0x00000000); //PWRCTL
-	ctl_apb_wr(0x030,0x00000000);
 	ctl_apb_wr(0x320,0x00000001); //SWCTL
 	
 	polling_sw_cfg_done();
@@ -383,15 +382,8 @@ int ctl_trigger_init_and_wait_normal()
 		}
 	}
 
-	ctl_apb_wr(0x1c4,0x00000001); //enable the PHY master interface.
-	ctl_apb_wr(0x320,0x00000000); //SWCTL
-	ctl_apb_wr(0x0d0,0x00030003); //set skip_dram_init to 0, for what???(lj.guo)
-	ctl_apb_wr(0x320,0x00000001); //SWCTL
-	polling_sw_cfg_done();
-	ctl_apb_wr(0x304,0x00000000); //enable dq and hif.
-	ctl_apb_wr(0x030,0x00000000);
-	ctl_apb_wr(0x030,0x00000000);
-	ctl_apb_wr(0x490,0x00000001); //axi port 0 enable.
+	ctl_apb_wr(0x1c4,0x80000001); //enable the PHY master interface.
+
 	return 1;
 }
 
