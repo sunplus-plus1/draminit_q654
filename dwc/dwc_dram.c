@@ -1032,7 +1032,7 @@ void ddr_retention_save_param(void)
 void dwc_ddrphy_phyinit_main(void)
 {
 
-	prn_string("dwc_ddrphy_phyinit_main 20240701\n");
+	prn_string("dwc_ddrphy_phyinit_main 20241014\n");
 	mp = 1;
 	#ifdef LCDL_testing
 	dwc_ddrphy_LCDL_testing();
@@ -1215,12 +1215,7 @@ void startClockResetUmctl2_of_SP(void)
 	SP_REG_AO(0, 14) =0x00020002;
 	SP_REG_AO(0, 14) =0x00040004;
 	SP_REG_AO(0, 14) =0x00100010;
-
 	wait_loop(1000);
-	wait_loop(1000);
-	dwc_umctl2_init_after_ctl_rst();
-	//SP_REG(0, 25) = RF_MASK_V_CLR(1 << 8);	// PRESETn_APB MO_DDRPHY_RST_B APB bus reset ; CLKDFI_DDRPHY_RST_B dfi_reset
- 	wait_loop(1000);
 }
 
 // ***********************************************************************

@@ -165,165 +165,6 @@ int dwc_umctl2_init_before_ctl_rst(void)
 	return 0;
 }
 
-
-int dwc_umctl2_init_after_ctl_rst(void)
-{
-#if defined(SDRAM_SPEED_1600) || defined(SDRAM_SPEED_1333)
-	#ifdef SDRAM_SPEED_1600
-	prn_string("SDRAM_SPEED_1600\n");
-	#endif
-	#ifdef SDRAM_SPEED_1333
-	prn_string("SDRAM_SPEED_1333\n");
-	#endif
-	ctl_apb_wr(0x0304,0x00000000);	
-	ctl_apb_rd(0x0030);//PWRCTL
-	ctl_apb_wr(0x0030,0x00000020);//PWRCTL
-	ctl_apb_rd(0x0030);//PWRCTL
-	ctl_apb_wr(0x0030,0x00000020); //PWRCTL
-	ctl_apb_rd(0x01c4);//DFIPHYMSTR
-	ctl_apb_wr(0x01c4,0x00000000);//DFIPHYMSTR
-	ctl_apb_wr(0x0320,0x00000000);//SWCTL
-	ctl_apb_wr(0x01b0,0x00000050);//DFIMISC
-	ctl_apb_wr(0x01b0,0x00000050);//DFIMISC
-	ctl_apb_wr(0x0304,0x00000002);
-	ctl_apb_rd(0x00d0);//INIT0
-	ctl_apb_rd(0x01c0);//DBICTL 'h00000006
-	ctl_apb_rd(0x0000);//MSTR 'h80080020
-	ctl_apb_rd(0x0000);//MSTR 'h80080020
-	ctl_apb_rd(0x00dc);//INIT3 'h0054002d
-	ctl_apb_rd(0x00dc);//INIT3 'h0054002d
-	ctl_apb_rd(0x00e0);//INIT4 'h00f10028
-	ctl_apb_rd(0x00e8);//INIT6 'h0004004d
-	ctl_apb_rd(0x00e8);//INIT6 'h0004004d
-	ctl_apb_rd(0x00e0);//INIT4 'h00f10028
-	ctl_apb_rd(0x00ec);//INIT7 'h0000004d
-	ctl_apb_rd(0x00ec);//INIT7 'h0000004d
-	ctl_apb_rd(0x00d0);//INIT0 'hc0020003
-	ctl_apb_rd(0x01c0);//DBICTL 'h00000006
-	ctl_apb_rd(0x0000);//MSTR 'h80080020
-	ctl_apb_rd(0x0000);//MSTR 'h80080020
-	ctl_apb_rd(0x00dc);//INIT3 'h0054002d
-	ctl_apb_rd(0x00dc);//INIT3 'h0054002d
-	ctl_apb_rd(0x00e0);//INIT4 'h00f10028
-	ctl_apb_rd(0x00e8);//INIT6 'h0004004d
-	ctl_apb_rd(0x00e8);//INIT6 'h0004004d
-	ctl_apb_rd(0x00e0);//INIT4 'h00f10028
-	ctl_apb_rd(0x00ec);//INIT7 'h0000004d
-	ctl_apb_rd(0x00ec);//INIT7 'h0000004d
-	ctl_apb_rd(0x00d0);//INIT0 'hc0020003
-#endif
-
-#ifdef SDRAM_SPEED_1200
-	prn_string("SDRAM_SPEED_1200\n");
-	ctl_apb_wr(0x304, 0x00000000);
-	ctl_apb_rd(0x030);
-	ctl_apb_wr(0x030, 0x00000020);
-	ctl_apb_rd(0x030);
-	ctl_apb_wr(0x030, 0x00000020);
-	ctl_apb_rd(0x1c4);
-	ctl_apb_wr(0x1c4, 0xcf000000);
-	ctl_apb_wr(0x320, 0x00000000);
-	ctl_apb_wr(0x1b0, 0x00000040);
-	ctl_apb_wr(0x1b0, 0x00000040);
-	ctl_apb_wr(0x304, 0x00000002);
-	ctl_apb_rd(0x0d0);
-	ctl_apb_rd(0x1c0);
-	ctl_apb_rd(0x000);
-	ctl_apb_rd(0x0dc);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0e8);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0ec);
-	ctl_apb_rd(0x0d0);
-	ctl_apb_rd(0x1c0);
-	ctl_apb_rd(0x000);
-	ctl_apb_rd(0x0dc);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0e8);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0ec);
-	ctl_apb_rd(0x0d0);
-#endif
-
-#if defined(SDRAM_SPEED_1066) || defined(SDRAM_SPEED_933) || defined(SDRAM_SPEED_800)
-	#ifdef SDRAM_SPEED_1066
-	prn_string("SDRAM_SPEED_1066\n");
-	#endif
-	#ifdef SDRAM_SPEED_933
-	prn_string("SDRAM_SPEED_933\n");
-	#endif
-	#ifdef SDRAM_SPEED_800
-	prn_string("SDRAM_SPEED_800\n");
-	#endif
-	ctl_apb_wr(0x304, 0x00000000);
-	ctl_apb_rd(0x030);
-	ctl_apb_wr(0x030, 0x00000020);
-	ctl_apb_rd(0x030);
-	ctl_apb_wr(0x030, 0x00000020);
-	ctl_apb_rd(0x1c4);
-	ctl_apb_wr(0x1c4, 0xcf000000);
-	ctl_apb_wr(0x320, 0x00000000);
-	ctl_apb_wr(0x1b0, 0x00000040);
-	ctl_apb_wr(0x1b0, 0x00000040);
-	ctl_apb_wr(0x304, 0x00000002);
-	ctl_apb_rd(0x0d0);
-	ctl_apb_rd(0x1c0);
-	ctl_apb_rd(0x000);
-	ctl_apb_rd(0x0dc);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0e8);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0ec);
-	ctl_apb_rd(0x0d0);
-	ctl_apb_rd(0x1c0);
-	ctl_apb_rd(0x000);
-	ctl_apb_rd(0x0dc);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0e8);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0ec);
-	ctl_apb_rd(0x0d0);
-#endif
-
-#if defined(SDRAM_SPEED_666) || defined(SDRAM_SPEED_533)
-	#ifdef SDRAM_SPEED_666
-	prn_string("SDRAM_SPEED_666\n");
-	#endif
-	#ifdef SDRAM_SPEED_533
-	prn_string("SDRAM_SPEED_533\n");
-	#endif
-	ctl_apb_wr(0x304, 0x00000000);
-	ctl_apb_rd(0x030);
-	ctl_apb_wr(0x030, 0x00000020);
-	ctl_apb_rd(0x030);
-	ctl_apb_wr(0x030, 0x00000020);
-	ctl_apb_rd(0x1c4);
-	ctl_apb_wr(0x1c4, 0x00000000);
-	ctl_apb_wr(0x320, 0x00000000);
-	ctl_apb_wr(0x1b0, 0x00000040);
-	ctl_apb_wr(0x1b0, 0x00000040);
-	ctl_apb_wr(0x304, 0x00000002);
-	ctl_apb_rd(0x0d0);
-	ctl_apb_rd(0x1c0);
-	ctl_apb_rd(0x000);
-	ctl_apb_rd(0x0dc);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0e8);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0ec);
-	ctl_apb_rd(0x0d0);
-	ctl_apb_rd(0x1c0);
-	ctl_apb_rd(0x000);
-	ctl_apb_rd(0x0dc);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0e8);
-	ctl_apb_rd(0x0e0);
-	ctl_apb_rd(0x0ec);
-	ctl_apb_rd(0x0d0);
-#endif
-	return 0;
-}
-
 void polling_sw_cfg_done()
 {
 	UINT16 rd_data;
@@ -505,6 +346,7 @@ int ctl_trigger_init_and_wait_normal()
 {
 	UINT16 rd_data;
 
+	ctl_apb_wr(0x320,0x00000000);//SWCTL
 	ctl_apb_wr(0x1b0,0x00000070);   //trigger dfi_init_start
 	//prn_string("Start to wait for dfi_init_complete !!!");
 	//prn_string("\n");
@@ -527,11 +369,8 @@ int ctl_trigger_init_and_wait_normal()
 	ctl_apb_wr(0x030,0x00000000); //PWRCTL
 	ctl_apb_wr(0x030,0x00000000);
 	ctl_apb_wr(0x320,0x00000001); //SWCTL
-	//// add w.zhou
-	//ctl_apb_wr(12'h014,32'h000002ce);
-	////////
+	
 	polling_sw_cfg_done();
-	//prn_string("12'h324 rd_data = 'h%8h",rd_data);
 
 	//prn_string("Start to wait for ctl into normal mode !!!");
 	//prn_string("\n");

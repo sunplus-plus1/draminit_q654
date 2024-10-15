@@ -56,7 +56,6 @@
 #endif
 
 int dwc_umctl2_init_before_ctl_rst(void);
-int dwc_umctl2_init_after_ctl_rst(void);
 void polling_sw_cfg_done();
 void dwc_ddrphy_phyinit_userCustom_G_waitFwDone ();
 void run_customPostTrain();
