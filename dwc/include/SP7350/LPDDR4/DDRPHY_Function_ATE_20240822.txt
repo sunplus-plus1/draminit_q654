@@ -1,0 +1,99 @@
+dwc_ddrphy_phyinit_D_loadIMEM (2);
+
+dwc_ddrphy_phyinit_F_loadDMEM (0,2);
+
+//-----------------[dz.he]-----------------------------
+// general setting
+dwc_ddrphy_apb_wr(0xD0000, 0x0000);
+
+dwc_ddrphy_apb_wr(0x54002, 0x0000);        // TestOptions
+dwc_ddrphy_apb_wr(0x54003, 0x0000);         // Technology
+dwc_ddrphy_apb_wr(0x54008, 0x0a04);          // NumAnibs,NumDbytes
+dwc_ddrphy_apb_wr(0x54009, 0x0009);    // X4Mode,NumBitsPerDbyte
+dwc_ddrphy_apb_wr(0x5400a, 0x3800);         // Vref,CalDrvStr0.
+dwc_ddrphy_apb_wr(0x5400b, 0x0190);         // DfiClkFreq  //400MHz
+dwc_ddrphy_apb_wr(0x5400c, 0x0000);        //Byte Offset: 0x18    uint16_t TxImpedanceCtrl0
+dwc_ddrphy_apb_wr(0x5400d, 0x0e38);        //Byte Offset: 0x1a    uint16_t TxImpedanceCtrl1: 40 ohm
+dwc_ddrphy_apb_wr(0x5400e, 0x0000);        //Byte Offset: 0x1c    uint16_t TxImpedanceCtrl2
+dwc_ddrphy_apb_wr(0x5400f, 0x0063);        //Byte Offset: 0x1e    uint16_t ATxImpedance: 40 ohm
+dwc_ddrphy_apb_wr(0x54010, 0x0001);        //Byte Offset: 0x20    uint16_t MinLoopbackPower  
+dwc_ddrphy_apb_wr(0x54011, 0x0000);        //Byte Offset: 0x23    uint8_t  CalInterval //Byte Offset: 0x22    uint8_t  ContinuousCal      
+dwc_ddrphy_apb_wr(0x54012, 0x0101);        //Byte Offset: 0x25    uint8_t  MemClkToggle   //Byte Offset: 0x24    uint8_t  PllLockCountMinimum
+dwc_ddrphy_apb_wr(0x54013, 0x0400);        //Byte Offset: 0x26    uint16_t MemClkTime
+dwc_ddrphy_apb_wr(0x54014, 0x3fff);        //Byte Offset: 0x28    uint16_t LcdlClksToRun
+dwc_ddrphy_apb_wr(0x54015, 0x0000);        //Byte Offset: 0x2a    uint16_t LcdlStartPhase
+dwc_ddrphy_apb_wr(0x54016, 0x01ff);        //Byte Offset: 0x2c    uint16_t LcdlEndPhase     
+dwc_ddrphy_apb_wr(0x54017, 0x6411);        //Byte Offset: 0x2f    uint8_t  LcdlPassPercent  //Byte Offset: 0x2e    uint8_t  LcdlStride
+dwc_ddrphy_apb_wr(0x54018, 0x1000);        //Byte Offset: 0x30    uint16_t LcdlObserveCfg[0] ACX4 0, LCDL 0
+dwc_ddrphy_apb_wr(0x54019, 0x1700);        //Byte Offset: 0x32    uint16_t LcdlObserveCfg[1] ACX4 7, LCDL 0
+dwc_ddrphy_apb_wr(0x5401a, 0x0003);        //Byte Offset: 0x34    uint16_t LcdlObserveCfg[2] DBYTE0, LCDL 3
+dwc_ddrphy_apb_wr(0x5401b, 0x0212);        //Byte Offset: 0x36    uint16_t LcdlObserveCfg[3] DBYTE2, LCDL 18
+dwc_ddrphy_apb_wr(0x5401c, 0x0000);        //Byte Offset: 0x38    uint8_t  AcLoopLaneMask[6]
+dwc_ddrphy_apb_wr(0x5401f, 0x0200);        //Byte Offset: 0x3e    uint16_t AcLoopClksToRun    
+dwc_ddrphy_apb_wr(0x54020, 0x0000);        //Byte Offset: 0x41    uint8_t  AcLoopCoreLoopBk  //Byte Offset: 0x40    uint8_t  AcLoopDataRate       
+dwc_ddrphy_apb_wr(0x54021, 0x0020);        //Byte Offset: 0x43    uint8_t  Alignment0RSVD  //Byte Offset: 0x42    uint8_t  AcMinEyeWidth
+dwc_ddrphy_apb_wr(0x54022, 0x3fff);        //Byte Offset: 0x44    uint16_t DatLoopClksToRun:  AE: 0x3fff
+dwc_ddrphy_apb_wr(0x54023, 0x0000);        //Byte Offset: 0x46    uint16_t DatLoopCoreLoopBk //0x0 pad, 0x1 core
+dwc_ddrphy_apb_wr(0x54024, 0x016f);        //Byte Offset: 0x48    uint16_t TxSlewRate
+dwc_ddrphy_apb_wr(0x54025, 0x05a0);        //Byte Offset: 0x4a    uint16_t DqDqsRcvCntrl
+dwc_ddrphy_apb_wr(0x54026, 0xffff);        //Byte Offset: 0x4c    uint16_t TxDqsDly
+dwc_ddrphy_apb_wr(0x54027, 0xffff);        //Byte Offset: 0x4e    uint16_t RxEnDly
+dwc_ddrphy_apb_wr(0x54028, 0xffff);        //Byte Offset: 0x50    uint16_t RxPBDly
+dwc_ddrphy_apb_wr(0x54029, 0x0039);        //Byte Offset: 0x52    uint16_t VrefDAC0  Note: FT 0422 is 0x41, but see bad pin 0x39 is better, Needs check good pin.
+dwc_ddrphy_apb_wr(0x5402a, 0x0400);        //Byte Offset: 0x55    uint8_t  DatLoopCoarseEnd  //Byte Offset: 0x54    uint8_t  DatLoopCoarseStart      
+dwc_ddrphy_apb_wr(0x5402b, 0x0c01);        //Byte Offset: 0x57    uint8_t  DatLoopMinEyeWidth  //Byte Offset: 0x56    uint8_t  DatLoopIncrement       
+dwc_ddrphy_apb_wr(0x5402c, 0x0000);        //Byte Offset: 0x59    uint8_t  DatLoop2dBit  //Byte Offset: 0x58    uint8_t  DatLoop2dByte      
+dwc_ddrphy_apb_wr(0x5402d, 0x7f00);        //Byte Offset: 0x5b    uint8_t  DatLoop2dVrefEnd  //Byte Offset: 0x5a    uint8_t  DatLoop2dVrefStart       
+dwc_ddrphy_apb_wr(0x5402e, 0x0001);        //Byte Offset: 0x5d    uint8_t  RxEnbOffset  //Byte Offset: 0x5c    uint8_t  DatLoop2dVrefIncr
+
+
+//-----------------[dz.he]-----------------------------
+// Run LCDL ATE pattern through apb bus
+
+dwc_ddrphy_apb_wr(0x54000, 0x0020);  //TestsToRun DBYTE 1D
+mon_shell2();
+dwc_ddrphy_apb_wr (0xc0033, 0x0001);
+dwc_ddrphy_apb_wr (0xd0031, 0x0001);
+dwc_ddrphy_apb_wr (0xd0000, 0x0001);
+dwc_ddrphy_apb_wr (0xd0099, 0x0009);    //Reset MicroController [csrMicroReset ; Reset = 1; Stall = 1}
+dwc_ddrphy_apb_wr (0xd0099, 0x0001);    //De-assert MicroController [csrMicroReset ; Reset = 0 Stall = 1}
+dwc_ddrphy_apb_wr (0xd0099, 0x0000);    //Start MicroController [csrMicroReset : Reset = 0 ; Stall = 0}
+
+{
+	UINT16 rd_data;
+	rd_data = dwc_ddrphy_apb_rd(0xd0004);
+	while (rd_data & 0x0001) {
+		//$display ($time, " <%m> INFO: polling DWC_DDRPHYA_APBONLY0__UctShadowRegs, bit 0...");
+		//repeat(1000) @(posedge test_clock);
+		rd_data = dwc_ddrphy_apb_rd(0xd0004);
+	}
+
+
+dwc_ddrphy_apb_wr (0xd0031, 0x0000);
+dwc_ddrphy_apb_wr (0xd0031, 0x0001);
+dwc_ddrphy_apb_wr (0xd0099, 0x0001);
+dwc_ddrphy_apb_wr (0xd0000, 0x0000);
+
+rd_data = dwc_ddrphy_apb_rd(0x54001);
+}
+
+mon_shell2();
+
+{
+	unsigned int i;
+
+	for (i = 0; i < 0xdf9; i++) {	
+		 dwc_ddrphy_apb_rd(0x54000+i);		
+	} 	
+}
+
+while (1) {
+		
+	}
+
+
+
+
+//-----------------[dz.he]-----------------------------
+// Read DCCM value
+
