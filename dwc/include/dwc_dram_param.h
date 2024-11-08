@@ -29,6 +29,8 @@
 //#define LCDL_testing
 #define DRAM_X32
 //#define DRAM_X16
+//#define DDP //DDR4 single-rank Twin Die
+
 #if defined(CONFIG_NT6AN1024F32AV)
 #define NT6AN1024F32AV
 #elif defined(CONFIG_MT53D1024M32D4)
