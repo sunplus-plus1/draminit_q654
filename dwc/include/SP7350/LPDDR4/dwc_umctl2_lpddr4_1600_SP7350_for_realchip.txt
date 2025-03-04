@@ -48,7 +48,7 @@ ctl_apb_wr(0x1b0 , 0x00000041);
 ctl_apb_wr(0x1b4 , 0x0000170a);
 ctl_apb_wr(0x1b8 , 0x00000004);
 ctl_apb_wr(0x1c0 , 0x00000001);
-ctl_apb_wr(0x1c4 , 0x80000000);
+ctl_apb_wr(0x1c4 , 0x80000001);
 #if defined(MT53E1G32D2_A) || defined(BWMZCX32H2A)
 ctl_apb_wr(0x200 , 0x001f1f18);
 ctl_apb_wr(0x204 , 0x00080808);
