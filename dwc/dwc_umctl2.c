@@ -166,6 +166,8 @@ int dwc_umctl2_init_before_ctl_rst(void)
 	prn_string("K4B8G1646D, SAMSUNG 512Mx16, 2rank\n");
 #elif defined(BWMZCX32H2A)
 	prn_string("BWMZCX32H2A, 1rank\n");
+#elif defined(EM6LH32MVAJA)
+	prn_string("EM6LH32MVAJA, 1rank\n");
 #endif
 	return 0;
 }
