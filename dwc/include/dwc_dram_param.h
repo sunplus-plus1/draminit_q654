@@ -49,6 +49,8 @@
 #define BWMZCX32H2A  /*BIWIN 1Gbx32, 1 rank*/
 #elif defined(CONFIG_EM6LH32MVAJA)
 #define EM6LH32MVAJA  /*ETRON 1Gbx32, 1 rank*/
+#elif defined(CONFIG_RS512M32LO4D1BDS)
+#define RS512M32LO4D1BDS  /*Rayson 512Mbx32, 1 rank*/
 #elif defined(CONFIG_MT40A512M16TB)
 #define MT40A512M16TB  /*Micron 512Mx16, 1 rank, FBGA code = D8BPK*/
 #elif defined(CONFIG_MT41K512M16VRP)
