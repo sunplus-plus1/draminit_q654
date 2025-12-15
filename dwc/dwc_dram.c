@@ -1032,7 +1032,7 @@ void ddr_retention_save_param(void)
 void dwc_ddrphy_phyinit_main(void)
 {
 
-	prn_string("dwc_ddrphy_phyinit_main 20241014\n");
+	prn_string("dwc_ddrphy_phyinit_main 20251215\n");
 	mp = 1;
 	#ifdef LCDL_testing
 	dwc_ddrphy_LCDL_testing();
@@ -1201,6 +1201,16 @@ void startClockResetUmctl2_of_SP(void)
 {
 	//prn_string("startClockResetUmctl2_of_SP");
 	//prn_string("\n");
+    SP_REG_AO(0, 14) = 0x00200000;  // 1->0: PwrOKIn MO_DDRPHY_PWROKIN ddrphy pwrokin
+	wait_loop(10000);                        // When PWROKIN is 0, PHY input signals need be valid at least 10ns
+	SP_REG_AO(0, 14) = 0x00010000;  // 1->0: assert DDRCTL APB RST_N
+	SP_REG_AO(0, 14) = 0x00080000;  // 1->0: assert DDRPHY APB RST_N
+	SP_REG_AO(0, 14) = 0x00020000;  // 1->0: assert DDRCTL AXI RST_N
+	SP_REG_AO(0, 14) = 0x00040000;  // 1->0: assert DDRCTL AHB RST_N
+	SP_REG_AO(0, 14) = 0x00100000;  // 1->0: assert DDRDFI RST_N
+ 
+	wait_loop(10000);   
+
 
 	dbg_stamp(0xA001);
 	SP_REG_AO(0, 14) =0x00200020;
