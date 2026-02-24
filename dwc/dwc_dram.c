@@ -88,10 +88,6 @@ static volatile struct dwc_phy_regs *dwc_phy_reg_ptr = (volatile struct dwc_phy_
 #define DWC_PHY_REG(OFFSET)		(dwc_phy_reg_ptr->dwc_phy_reg[OFFSET ])
 
 static unsigned int ckobd_training_flag = 0;
-#if defined(CONFIG_HAVE_SPI_NAND) || defined(CONFIG_HAVE_PARA_NAND)
-static unsigned int pg_off_prev = 0;
-static unsigned int chk_multi_img_in_same_page = 0;
-#endif
 static unsigned int bootdevice;
 static unsigned int XBOOT_len  = 0;
 static unsigned int IMEM1d_len = 0;
@@ -516,16 +512,9 @@ void LoadBinForNAND(int Train2D, int mem_type, u32 pg_off, UINT32 *buf)
 	int res = 2;
 	u32 mem_addr = 0, mem_offset = 0;
 	u32 img_name = 0, img_length = 0, img_sum = 0;
-	u32 i, j, cnt, word16;
+	u32 i, j, cnt, end, word16;
 
 	//prn_string("LoadBinForNAND\n");
-
-	//Consider the case that multiple image in one page
-	if(pg_off == pg_off_prev)
-		chk_multi_img_in_same_page = 1;
-	else
-		chk_multi_img_in_same_page = 0;
-	pg_off_prev = pg_off;
 
 	sum = 0;    // Reset DWC checksum
 	cnt = sz_sect / 4;
@@ -565,12 +554,9 @@ void LoadBinForNAND(int Train2D, int mem_type, u32 pg_off, UINT32 *buf)
 				((Train2D == 0) && (mem_type == 1) && (img_name != DM1D_HDR_MAGIC)) ||
 				((Train2D == 1) && (mem_type == 0) && (img_name != IM2D_HDR_MAGIC)) ||
 				((Train2D == 1) && (mem_type == 1) && (img_name != DM2D_HDR_MAGIC))) {
-				//Consider the case that multiple image in one page
-				if(chk_multi_img_in_same_page == 1) {
-					continue;
-				} else {
-					prn_string("Wrong image! img_name="); prn_dword(img_name);
-				}
+				// Find the wrong image and search again
+				prn_string("Wrong image! img_name="); prn_dword(img_name);
+				continue;
 			}
 
 			// Check first data position
@@ -606,13 +592,6 @@ void LoadBinForNAND(int Train2D, int mem_type, u32 pg_off, UINT32 *buf)
 			prn_string("img_length="); prn_dword(img_length);
 			prn_string("img_sum="); prn_dword(img_sum);
 
-			//Consider the case that (img_start_pos + img_length) < page_size
-			if(j + img_length / 4 < cnt)
-				i = j + img_length / 4;
-			else
-				i = cnt;
-			tcpsum(j, i, buf, 0);
-
 			// Store BIN file length. Add it to header length, 32 bytes.
 			if (img_name == IM1D_HDR_MAGIC)
 				IMEM1d_len = img_length + 32;
@@ -623,25 +602,56 @@ void LoadBinForNAND(int Train2D, int mem_type, u32 pg_off, UINT32 *buf)
 			else if (img_name == DM2D_HDR_MAGIC)
 				DMEM2d_len = img_length + 32;
 
-			// Write DWC PHY register
-			//prn_string("Write DWC PHY register\n");
-			//prn_string("mem_addr="); prn_dword(mem_addr);
-			for (; j < cnt; j++) {
-				//prn_string("j="); prn_dword(j);
-				word16 = buf[j]&0xFFFF;
-				dwc_ddrphy_apb_wr(mem_addr+mem_offset, word16);
-				//printf_offset_value(mem_offset,word16);
-				mem_offset++;
-				word16 = (buf[j]>>16)&0xFFFF;
-				dwc_ddrphy_apb_wr(mem_addr+mem_offset, word16);
-				//printf_offset_value(mem_offset,word16);
-				mem_offset++;
-				img_length -= 4;
-				if(img_length == 0)
-					break;
+			// Calculate the end word count of the bin file
+			end = j + (img_length / 4);
+			prn_string("end="); prn_dword(end);
+
+			if (end <= cnt) {
+				prn_string("Special case\n");
+				tcpsum(j, end, buf, 1);
+
+				// Write DWC PHY register
+				//prn_string("Write DWC PHY register\n");
+				//prn_string("mem_addr="); prn_dword(mem_addr);
+				for (; j < end; j++) {
+					//prn_string("j="); prn_dword(j);
+					word16 = buf[j]&0xFFFF;
+					dwc_ddrphy_apb_wr(mem_addr+mem_offset, word16);
+					//printf_offset_value(mem_offset,word16);
+					mem_offset++;
+					word16 = (buf[j]>>16)&0xFFFF;
+					dwc_ddrphy_apb_wr(mem_addr+mem_offset, word16);
+					//printf_offset_value(mem_offset,word16);
+					mem_offset++;
+					img_length -= 4;
+				}
+				//prn_string("img_length="); prn_dword(img_length);
+
+				DwcCheckSum(img_name, img_sum);
+
+				return;
+			} else {
+				prn_string("Normal case\n");
+				tcpsum(j, cnt, buf, 0);
+
+				// Write DWC PHY register
+				//prn_string("Write DWC PHY register\n");
+				//prn_string("mem_addr="); prn_dword(mem_addr);
+				for (; j < cnt; j++) {
+					//prn_string("j="); prn_dword(j);
+					word16 = buf[j]&0xFFFF;
+					dwc_ddrphy_apb_wr(mem_addr+mem_offset, word16);
+					//printf_offset_value(mem_offset,word16);
+					mem_offset++;
+					word16 = (buf[j]>>16)&0xFFFF;
+					dwc_ddrphy_apb_wr(mem_addr+mem_offset, word16);
+					//printf_offset_value(mem_offset,word16);
+					mem_offset++;
+					img_length -= 4;
+				}
+				//prn_string("img_length="); prn_dword(img_length);
+				break;
 			}
-			//prn_string("img_length="); prn_dword(img_length);
-			break;
 		}
 	}
 
