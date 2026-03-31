@@ -171,7 +171,9 @@ int dwc_umctl2_init_before_ctl_rst(void)
 #elif defined(RS512M32LO4D1BDS)
 	prn_string("RS512M32LO4D1BDS, 1rank\n");
 #elif defined(IS43LQ32K01B)
-	prn_string("IS43LQ32K01B, 1rank\n");	
+	prn_string("IS43LQ32K01B, 1rank\n");
+#elif defined(IS43LQ32K01S2A)
+	prn_string("IS43LQ32K01S2A-046BLI, 2rank\n");	
 #endif
 	return 0;
 }
