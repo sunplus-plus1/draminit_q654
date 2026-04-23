@@ -52,9 +52,9 @@
 #elif defined(CONFIG_RS512M32LO4D1BDS)
 #define RS512M32LO4D1BDS  /*Rayson 512Mbx32, 1 rank*/
 #elif defined(CONFIG_IS43LQ32K01B)
-#define IS43LQ32K01B  /*ISSI 512Mbx32, 1 rank*/
+#define IS43LQ32K01B  /*ISSI 1Gbx32, 1 rank*/
 #elif defined(CONFIG_IS43LQ32K01S2A)
-#define IS43LQ32K01S2A  /*ISSI 512Mbx32, 2 rank*/
+#define IS43LQ32K01S2A  /*ISSI 1Gbx32, 2 rank*/
 #elif defined(CONFIG_MT40A512M16TB)
 #define MT40A512M16TB  /*Micron 512Mx16, 1 rank, FBGA code = D8BPK*/
 #elif defined(CONFIG_MT41K512M16VRP)
